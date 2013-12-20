@@ -2,6 +2,6 @@
 --
 
 DROP TABLE IF EXISTS `#__allmediaplay_player`;
-DROP TABLE IF EXISTS `#__avr_ripper`;
-DROP TABLE IF EXISTS `#__avr_tags`;
-DROP TABLE IF EXISTS `#__avr_popup`;
+DROP TABLE IF EXISTS `#__allmediaplay_ripper`;
+DROP TABLE IF EXISTS `#__allmediaplay_tags`;
+DROP TABLE IF EXISTS `#__allmediaplay_popup`;

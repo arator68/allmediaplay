@@ -1,7 +1,7 @@
 -- $Id: backup_utf8.sql 1059 2008-07-23 00:55:23Z Fritz Elfert $
 --
-DROP TABLE IF EXISTS `#__avrbak_avr_player`;
-CREATE TABLE IF NOT EXISTS `#__avr_player` (
+DROP TABLE IF EXISTS `#__allmediaplaybak_allmediaplay_player`;
+CREATE TABLE IF NOT EXISTS `#__allmediaplay_player` (
   `id` int(11) NOT NULL auto_increment,
   `version` int(11) NOT NULL DEFAULT 0,
   `minw` int(11) NOT NULL DEFAULT 0,
@@ -12,10 +12,10 @@ CREATE TABLE IF NOT EXISTS `#__avr_player` (
   `description` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=38 CHARACTER SET `utf8`;
-RENAME TABLE `#__avr_player` TO `#__avrbak_avr_player`;
+RENAME TABLE `#__allmediaplay_player` TO `#__allmediaplaybak_allmediaplay_player`;
 
-DROP TABLE IF EXISTS `#__avrbak_avr_ripper`;
-CREATE TABLE IF NOT EXISTS `#__avr_ripper` (
+DROP TABLE IF EXISTS `#__allmediaplaybak_allmediaplay_ripper`;
+CREATE TABLE IF NOT EXISTS `#__allmediaplay_ripper` (
   `id` int(11) NOT NULL auto_increment,
   `version` int(11) NOT NULL DEFAULT 0,
   `flags` int(11) NOT NULL DEFAULT '0',
@@ -26,10 +26,10 @@ CREATE TABLE IF NOT EXISTS `#__avr_ripper` (
   `description` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=10 CHARACTER SET `utf8`;
-RENAME TABLE `#__avr_ripper` TO `#__avrbak_avr_ripper`;
+RENAME TABLE `#__allmediaplay_ripper` TO `#__allmediaplaybak_allmediaplay_ripper`;
 
-DROP TABLE IF EXISTS `#__avrbak_avr_tags`;
-CREATE TABLE IF NOT EXISTS `#__avr_tags` (
+DROP TABLE IF EXISTS `#__allmediaplaybak_allmediaplay_tags`;
+CREATE TABLE IF NOT EXISTS `#__allmediaplay_tags` (
   `id` int(11) NOT NULL auto_increment,
   `version` int(11) NOT NULL DEFAULT 0,
   `player_id` int(11) NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `#__avr_tags` (
   PRIMARY KEY  (`id`),
   KEY `tag` (`name`)
 ) ENGINE=MyISAM AUTO_INCREMENT=83 CHARACTER SET `utf8`;
-RENAME TABLE `#__avr_tags` TO `#__avrbak_avr_tags`;
+RENAME TABLE `#__allmediaplay_tags` TO `#__allmediaplaybak_allmediaplay_tags`;
 
 -- Temporary for Transition from Version 1.2.3 -> 1.2.4
-DROP TABLE IF EXISTS `#__avr_popup`;
+DROP TABLE IF EXISTS `#__allmediaplay_popup`;
