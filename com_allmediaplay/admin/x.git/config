@@ -1,0 +1,8 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	logallrefupdates = true
+	bare = false
+[remote "origin"]
+	url = https://github.com/arator68/allmediaplay.git
+	fetch = +refs/heads/master:refs/remotes/origin/master

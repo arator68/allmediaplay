@@ -1,0 +1,4 @@
+allmediaplay
+============
+
+AllMediaPlay for Joomla
