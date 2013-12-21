@@ -11,7 +11,7 @@
     <config>
     <fields name="params" addfieldpath="/administrator/components/com_allmediaplay/elements">
         <fieldset name="basic">
-            <field name="" type="header" default="LBL_VIDEOPARAMETER" label="" description="" />
+            <!--<field name="" type="header" default="LBL_VIDEOPARAMETER" label="" description="" />-->
             <field name="avcss" type="text" default="allvideos" size="20" label="LBL_CSSCLASS" description="DSC_CSSCLASS" />	
             <field name="width" type="text" default="400" size="5" label="LBL_WIDTH" description="DSC_WIDTH" />
             <field name="height" type="text" default="320" size="5" label="LBL_HEIGHT" description="DSC_HEIGHT" />
@@ -22,7 +22,7 @@
                 <option value="opaque">OPT_OPAQUE</option>
             </field>
             <field name="bgcolor" type="color" default="#FFFFFF" size="6" label="LBL_BGCOLOR" description="DSC_BGCOLOR" />
-            <field name="" type="header" default="LBL_AUDIOPARAMETER" label="" description="" />
+            <!--<field name="" type="header" default="LBL_AUDIOPARAMETER" label="" description="" />-->
             <field name="adir" type="text" default="audio" size="20" label="LBL_ADIR" description="DSC_ADIR" />
             <field name="awidth" type="text" default="300" size="5" label="LBL_AWIDTH" description="DSC_AWIDTH" />
             <field name="aheight" type="text" default="20" size="5" label="LBL_AHEIGHT" description="DSC_AHEIGHT" />
@@ -33,7 +33,7 @@
             <field name="cache_time" type="text" default="3600" label="LBL_CACHE_TIME" description="DSC_CACHE_TIME" />            
         </fieldset>
         <fieldset name="advanced">
-            <field name="" type="header" default="LBL_PLAYERCONFIG" label="" description="" />
+            <!--<field name="" type="header" default="LBL_PLAYERCONFIG" label="" description="" />-->
             <field name="flashver" type="list" default="9.0.115" label="LBL_FLASHVER" description="DSC_FLASHVER">
                 <option value="9.0.124">9.0.124</option>
                 <option value="9.0.115">9.0.115</option>
@@ -127,7 +127,7 @@
                 <option value="3">OPT_STRETCH_NONE</option>
             </field>
             <field name="alt" type="textarea" rows="3" cols="40" default="" label="LBL_ALTCONTENT" description="DSC_ALTCONTENT" />
-            <field name="" type="header" default="LBL_KOMPPARAMETER" label="" description="" />
+            <!--<field name="" type="header" default="LBL_KOMPPARAMETER" label="" description="" />-->
             <field name="legacy" type="list" default="0" label="LBL_LEGACY" description="DSC_LEGACY">
                 <option value="0">OPT_NO</option>
                 <option value="1">OPT_YES</option>
