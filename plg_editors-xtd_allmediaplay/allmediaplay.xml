@@ -3,12 +3,11 @@
 <extension version="1.6.0" type="plugin" group="editors-xtd" method="upgrade">
 	<name>PLG_EDITOR_XTD_ALLMEDIAPLAY_NAME</name>
 	<author>Rainer Koch</author>
-	<authorEmail>koch.rainer@live.de</authorEmail>
-	<authorUrl>http://www.rk-softwareentwicklung.de</authorUrl>
-	<copyright>(C) 2013 RK-Softwareentwicklung</copyright>
-	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
-	<version>1.0.0</version>
-	<creationDate>December 05, 2013</creationDate>
+        <creationDate>2013-12-21</creationDate>	
+        <copyright>Copyright 2013 by RK-Softwareentwicklung</copyright>
+        <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+        <authorEmail>koch.rainer@live.de</authorEmail>
+        <version>1.0.0</version>
 	<description>PLG_EDITOR_XTD_ALLMEDIAPLAY_DESCRIPTION</description>
 	<files>
 		<filename plugin="allmediaplay">allmediaplay.php</filename>
