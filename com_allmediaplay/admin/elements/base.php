@@ -13,7 +13,7 @@ defined('_JEXEC') or die('Restricted access');
 if (version_compare(JVERSION, '1.6.0', 'ge'))
 {
 	jimport('joomla.form.formfield');
-	class JWElement extends JFormField
+	class AllMediaPlayElement extends JFormField
 	{
 		function getInput()
 		{
@@ -44,7 +44,7 @@ if (version_compare(JVERSION, '1.6.0', 'ge'))
 else
 {
 	jimport('joomla.html.parameter.element');
-	class JWElement extends JElement
+	class AllMediaPlayElement extends JElement
 	{
 	}
 

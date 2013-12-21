@@ -12,7 +12,7 @@ defined('_JEXEC') or die('Restricted access');
 
 require_once (dirname(__FILE__).'/base.php');
 
-class JWElementHeader extends JWElement
+class AllMediaPlayElementHeader extends AllMediaPlayElement
 {
 	public function fetchElement($name, $value, &$node, $control_name)
 	{
@@ -42,12 +42,12 @@ class JWElementHeader extends JWElement
 
 }
 
-class JFormFieldHeader extends JWElementHeader
+class JFormFieldHeader extends AllMediaPlayElementHeader
 {
 	var $type = 'header';
 }
 
-class JElementHeader extends JWElementHeader
+class JElementHeader extends AllMediaPlayElementHeader
 {
 	var $_name = 'header';
 }
