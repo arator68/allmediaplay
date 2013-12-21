@@ -146,7 +146,8 @@
     <!-- Language files -->
     <administration>
     <languages>
-        <language tag="de-DE">language/de-DE.plg_content_allmediaplay.ini</language>            
+        <language tag="de-DE">language/de-DE.plg_content_allmediaplay.ini</language>     
+        <language tag="de-DE">language/de-DE.plg_content_allmediaplay.sys.ini</language>            
     </languages>
     </administration>
     <files>
