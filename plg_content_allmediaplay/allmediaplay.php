@@ -1,6 +1,6 @@
 <?php
 /*
- * $Id: avreloaded.php.in 1054 2008-07-21 20:50:17Z Fritz Elfert $
+ * $Id: allmediaplay.php.in 1054 2008-07-21 20:50:17Z Fritz Elfert $
  *
  * AllVideos Reloaded for Joomla! 1.5
  *
@@ -16,9 +16,12 @@
 
 defined('_JEXEC') or die("Direct Access Is Not Allowed");
 jimport('joomla.plugin.plugin');
+if (version_compare(JVERSION, '1.6.0', 'ge')){
+	jimport('joomla.html.parameter');
+}
 
 class plgContentAllMediaPlay extends JPlugin {
-
+    
     var $_version = '1.2.7';
     var $_rev = '$Revision: 1054 $';
     // Our standard header
@@ -56,10 +59,12 @@ class plgContentAllMediaPlay extends JPlugin {
     var $_mloc = null;
     // Our version tag
     var $_vtag = null;
-    // DB-Support? (com_avreloaded available and enabled) available
+    // DB-Support? (com_allmediaplay available and enabled) available
     var $_dbok = 0;
     // Last assigned divid
     var $_last_divid = null;
+    
+    var $plg_name = "allmediaplay";
 
     ///// Content plugin API interface starts here
 
@@ -75,8 +80,16 @@ class plgContentAllMediaPlay extends JPlugin {
      * @param int    $special Used internally
      * @since 1.5
      */
-    function plgContentAllMediaPlay(& $subject, $params, $special = 0) {
+    function plgContentAllMediaPlay(&$subject, $params)
+    {
         parent::__construct($subject, $params);
+
+        // Define the DS constant under Joomla! 3.0
+        if (!defined('DS'))
+        {
+            define('DS', DIRECTORY_SEPARATOR);
+        }
+        $this->loadLanguage();
         $this->_init();
     }
 
@@ -89,8 +102,16 @@ class plgContentAllMediaPlay extends JPlugin {
      * @param       object          The article params
      * @param       int             The 'page' number
      */
+    
+    // Joomla! 1.5
     function onPrepareContent(&$article, &$params, $limitstart=0) {
         $article->text = $this->_doSubstitution($article->text);
+    }
+     
+    // Joomla! 2.5+
+    function onContentPrepare($context, &$row, &$params, $page = 0)
+    {
+        $row->text = $this->_doSubstitution($row->text);
     }
 
     ///// Content plugin API interface ends here
@@ -166,11 +187,13 @@ class plgContentAllMediaPlay extends JPlugin {
         // with components). Instead, it installs the language files always into the
         // JPATH_ADMINISTRATOR/languages. Therefore we have to specify this path
         // explicitely.
-        JPlugin::loadLanguage('plg_content_avreloaded', JPATH_ADMINISTRATOR);
-        $mparams =& JComponentHelper::getParams('com_media');
+        $language_name= 'plg_content_' . $this->plg_name;
+        JPlugin::loadLanguage($language_name, JPATH_ADMINISTRATOR);
+        //JPlugin::loadLanguage('plg_content_allmediaplay', JPATH_ADMINISTRATOR);
+        /*$mparams =& JComponentHelper::getParams('com_media');
         $this->_mloc = JURI::root().'/'.$mparams->get('image_path', 'images/stories').'/';
-        $this->_rdir = JPATH_PLUGINS.DS.'content'.DS.'avreloaded'.DS;
-        $this->_rlocr = 'plugins/content/avreloaded/';
+        $this->_rdir = JPATH_PLUGINS.DS.'content'.DS.'allmediaplay'.DS;
+        $this->_rlocr = 'plugins/content/allmediaplay/';
         $this->_rloc = JURI::root(true).'/'.$this->_rlocr;
         // Workaround for "double-slash" prob
         $this->_mloc = preg_replace('#([^:])//#','\\1/', $this->_mloc);
@@ -180,14 +203,14 @@ class plgContentAllMediaPlay extends JPlugin {
 
         $this->_vtag = 'v'.$this->_version.'.'.preg_replace('#\D#', '', $this->_rev);
 
-        $tags = null;
+        $tags = null;*/
         // Check for our corresponding component which owns the db tables.
-        if (JComponentHelper::isEnabled('com_avreloaded', true)) {
+        if (JComponentHelper::isEnabled('com_allmediaplay', true)) {
             $db = &JFactory::getDBO();
             $query = 'SELECT name,player_id,ripper_id,postreplace FROM #__avr_tags';
-            @$db->setQuery($query);
-            @$db->query();
-            @$tags = $db->loadObjectList();
+            $db->setQuery($query);
+            $db->query();
+            $tags = $db->loadObjectList();
             $this->_dbok = is_array($tags);
         }
         if (!is_array($tags)) {
@@ -250,7 +273,7 @@ class plgContentAllMediaPlay extends JPlugin {
             return $text;
         }
         // Get the plugin parameters
-        $plugin = &JPluginHelper::getPlugin('content', 'avreloaded');
+        $plugin = &JPluginHelper::getPlugin('content', 'allmediaplay');
         $params = new JParameter($plugin->params);
         $cfg = array();
 
@@ -353,10 +376,10 @@ class plgContentAllMediaPlay extends JPlugin {
                 if (preg_match_all($re, $text, $matches, PREG_PATTERN_ORDER) > 0) {
                     // load the matching player
                     $db = &JFactory::getDBO();
-                    $query = 'SELECT code,minw,minh FROM #__avr_player where id = ' . $tag->player_id;
-                    @$db->setQuery($query);
-                    @$db->query();
-                    @$player = $db->loadObject();
+                    $query = 'SELECT code,minw,minh FROM #__allmediaplay_player where id = ' . $tag->player_id;
+                    $db->setQuery($query);
+                    $db->query();
+                    $player = $db->loadObject();
                     if ($player == null) {
                         // The tag/preset referenced a nonexistent player
                         JError::raiseError(500, JText::_('ERR_FORMAT'), $fn);
@@ -393,7 +416,7 @@ class plgContentAllMediaPlay extends JPlugin {
                         $tcfg = $avpcfg;
                         $tstart = $start;
                         $tend = $end;
-                        $tcfg['divid'] = 'avreloaded'.$divid++;
+                        $tcfg['divid'] = 'allmediaplay'.$divid++;
                         if (JString::strlen($parms)) {
                             // If individual parameters are specified,
                             // make tplr a deep copy ..
@@ -410,7 +433,7 @@ class plgContentAllMediaPlay extends JPlugin {
                             @$db->query();
                             @$robj = $db->loadObject();
                             if (is_object($robj)) {
-                                $cache =& JFactory::getCache('plg_content_avreloaded');
+                                $cache =& JFactory::getCache('plg_content_allmediaplay');
                                 $cache->setCaching($cache_on);
                                 $cache->setLifeTime($cache_time);
                                 $tmp = $tcfg;
@@ -503,7 +526,7 @@ class plgContentAllMediaPlay extends JPlugin {
         // we use uncompressed JavaScript
         if ($debug || $konqcheck) {
             $js_swf = 'swfobject-uncompressed.js';
-            $js_avr = 'avreloaded-uncompressed.js';
+            $js_avr = 'allmediaplay-uncompressed.js';
             $js_wmv = 'wmvplayer-uncompressed.js';
         }
         if ($needsl) {
@@ -571,7 +594,7 @@ class plgContentAllMediaPlay extends JPlugin {
             $w.','.$h.',NOW())';
         @$db->setQuery($query);
         @$db->query();
-        $url = 'index.php?option=com_avreloaded&view=popup&Itemid='.$itemid.'&divid='.$divid;
+        $url = 'index.php?option=com_allmediaplay&view=popup&Itemid='.$itemid.'&divid='.$divid;
         $code =
             '<span id="avrpopup_'.$divid.'" title="{'.
             'handler:\'iframe\',size:{x:'.$w.',y:'.$h.'},'.
