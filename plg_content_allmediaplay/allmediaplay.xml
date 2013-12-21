@@ -144,10 +144,11 @@
 </config>
        
     <!-- Language files -->
+    <administration>
     <languages>
-        <language tag="de-DE">de-DE.plg_content_allmediaplay.ini</language>            
+        <language tag="de-DE">language/de-DE.plg_content_allmediaplay.ini</language>            
     </languages>
-
+    </administration>
     <files>
         <!-- Documentation -->
         <!-- _HELPFILES_ -->
