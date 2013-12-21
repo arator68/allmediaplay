@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="component" version="1.6.0" method="upgrade">
 	<name>COM_ALLMEDIAPLAY</name>
-	<!-- The following elements are optional and free of formatting conttraints -->
-	<creationDate>November 2009</creationDate>
-	<author>John Doe</author>
-	<authorEmail>john.doe@example.org</authorEmail>
-	<authorUrl>http://www.example.org</authorUrl>
-	<copyright>Copyright Info</copyright>
-	<license>License Info</license>
-	<!--  The version string is recorded in the components table -->
-	<version>1.0.0</version>
-	<!-- The description is optional and defaults to the name -->
+	<author>Rainer Koch</author>
+        <creationDate>2013-12-21</creationDate>	
+        <copyright>Copyright 2013 by RK-Softwareentwicklung</copyright>
+        <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+        <authorEmail>koch.rainer@live.de</authorEmail>
+        <version>1.0.0</version>
 	<description>COM_ALLMEDIAPLAY_DESCRIPTION</description>
-        <!-- Runs on install/uninstall/update; New in 1.6 -->
 	<scriptfile>script.php</scriptfile>
 
 	<install> <!-- Runs on install -->
@@ -63,6 +58,8 @@
 			<folder>controllers</folder>
 			<!-- helpers files section -->
 			<folder>helpers</folder>
+                        <!-- helpers files section -->
+			<folder>elements</folder>
 		</files>
 
 		<languages folder="admin">
