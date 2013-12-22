@@ -9,8 +9,8 @@
     <version>1.0.0</version>
     <description>DSC_INFO</description>
     <config>
-    <fields name="params" addfieldpath="/administrator/components/com_allmediaplay/elements">
-        <fieldset name="basic">
+    <fields name="params">
+        <fieldset name="basic" addfieldpath="/plugins/content/jw_allvideos/elements">
             <!--<field name="" type="header" default="LBL_VIDEOPARAMETER" label="" description="" />-->
             <field name="avcss" type="text" default="allvideos" size="20" label="LBL_CSSCLASS" description="DSC_CSSCLASS" />	
             <field name="width" type="text" default="400" size="5" label="LBL_WIDTH" description="DSC_WIDTH" />
@@ -144,103 +144,13 @@
 </config>
        
     <!-- Language files -->
-    <administration>
-    <languages>
-        <language tag="de-DE">language/de-DE.plg_content_allmediaplay.ini</language>     
-        <language tag="de-DE">language/de-DE.plg_content_allmediaplay.sys.ini</language>            
+    <languages folder="plugin">
+        <language tag="de-DE">language/de-DE/de-DE.plg_content_allmediaplay.ini</language>     
+        <language tag="de-DE">language/de-DE/de-DE.plg_content_allmediaplay.sys.ini</language>            
     </languages>
-    </administration>
-    <files>
-        <!-- Documentation -->
-        <!-- _HELPFILES_ -->
-            <filename>allmediaplay/doc/nl-nl.doc6.html</filename>
-            <filename>allmediaplay/doc/en-gb.doc10.html</filename>
-            <filename>allmediaplay/doc/en-gb.doc9.html</filename>
-            <filename>allmediaplay/doc/index.html</filename>
-            <filename>allmediaplay/doc/es-es.doc3.html</filename>
-            <filename>allmediaplay/doc/es-es.doc0.html</filename>
-            <filename>allmediaplay/doc/nl-nl.doc10.html</filename>
-            <filename>allmediaplay/doc/en-gb.doc7.html</filename>
-            <filename>allmediaplay/doc/fr-fr.doc2.html</filename>
-            <filename>allmediaplay/doc/notice-download.png</filename>
-            <filename>allmediaplay/doc/es-es.doc5.html</filename>
-            <filename>allmediaplay/doc/nl-nl.doc0.html</filename>
-            <filename>allmediaplay/doc/joomla-mm.png</filename>
-            <filename>allmediaplay/doc/notice-info.png</filename>
-            <filename>allmediaplay/doc/nl-nl.doc2.html</filename>
-            <filename>allmediaplay/doc/insert-local.png</filename>
-            <filename>allmediaplay/doc/de-de.doc1.html</filename>
-            <filename>allmediaplay/doc/fr-fr.doc9.html</filename>
-            <filename>allmediaplay/doc/es-es.doc1.html</filename>
-            <filename>allmediaplay/doc/fr-fr.doc10.html</filename>
-            <filename>allmediaplay/doc/de-de.doc10.html</filename>
-            <filename>allmediaplay/doc/svn2html.css</filename>
-            <filename>allmediaplay/doc/notice-note.png</filename>
-            <filename>allmediaplay/doc/de-de.doc0.html</filename>
-            <filename>allmediaplay/doc/fr-fr.doc3.html</filename>
-            <filename>allmediaplay/doc/editbutton.png</filename>
-            <filename>allmediaplay/doc/es-es.doc2.html</filename>
-            <filename>allmediaplay/doc/en-gb.doc1.html</filename>
-            <filename>allmediaplay/doc/edit-track.png</filename>
-            <filename>allmediaplay/doc/fr-fr.doc5.html</filename>
-            <filename>allmediaplay/doc/nl-nl.doc7.html</filename>
-            <filename>allmediaplay/doc/nl-nl.doc1.html</filename>
-            <filename>allmediaplay/doc/en-gb.doc3.html</filename>
-            <filename>allmediaplay/doc/edit-playlist.png</filename>
-            <filename>allmediaplay/doc/fr-fr.doc7.html</filename>
-            <filename>allmediaplay/doc/es-es.doc8.html</filename>
-            <filename>allmediaplay/doc/fr-fr.doc8.html</filename>
-            <filename>allmediaplay/doc/fr-fr.doc1.html</filename>
-            <filename>allmediaplay/doc/youtube-sample.png</filename>
-            <filename>allmediaplay/doc/nl-nl.doc9.html</filename>
-            <filename>allmediaplay/doc/de-de.doc9.html</filename>
-            <filename>allmediaplay/doc/en-gb.doc8.html</filename>
-            <filename>allmediaplay/doc/nl-nl.doc3.html</filename>
-            <filename>allmediaplay/doc/es-es.doc7.html</filename>
-            <filename>allmediaplay/doc/ChangeLog.html</filename>
-            <filename>allmediaplay/doc/es-es.doc4.html</filename>
-            <filename>allmediaplay/doc/en-gb.doc6.html</filename>
-            <filename>allmediaplay/doc/de-de.doc4.html</filename>
-            <filename>allmediaplay/doc/en-gb.doc4.html</filename>
-            <filename>allmediaplay/doc/de-de.doc7.html</filename>
-            <filename>allmediaplay/doc/fr-fr.doc4.html</filename>
-            <filename>allmediaplay/doc/en-gb.doc5.html</filename>
-            <filename>allmediaplay/doc/en-gb.doc2.html</filename>
-            <filename>allmediaplay/doc/nl-nl.doc8.html</filename>
-            <filename>allmediaplay/doc/manage-playlists.png</filename>
-            <filename>allmediaplay/doc/de-de.doc5.html</filename>
-            <filename>allmediaplay/doc/de-de.doc8.html</filename>
-            <filename>allmediaplay/doc/es-es.doc6.html</filename>
-            <filename>allmediaplay/doc/de-de.doc3.html</filename>
-            <filename>allmediaplay/doc/de-de.doc6.html</filename>
-            <filename>allmediaplay/doc/fr-fr.doc0.html</filename>
-            <filename>allmediaplay/doc/insert-remote.png</filename>
-            <filename>allmediaplay/doc/ytselect.png</filename>
-            <filename>allmediaplay/doc/de-de.doc2.html</filename>
-            <filename>allmediaplay/doc/es-es.doc10.html</filename>
-            <filename>allmediaplay/doc/en-gb.doc0.html</filename>
-            <filename>allmediaplay/doc/notice-alert.png</filename>
-            <filename>allmediaplay/doc/fr-fr.doc6.html</filename>
-            <filename>allmediaplay/doc/nl-nl.doc5.html</filename>
-            <filename>allmediaplay/doc/nl-nl.doc4.html</filename>
-            <filename>allmediaplay/doc/es-es.doc9.html</filename>
-        <!-- _HELPFILES_ -->
-        <!-- Support media -->
-        <filename>allmediaplay/silverlight.js</filename>
-        <filename>allmediaplay/wmvplayer.js</filename>
-        <filename>allmediaplay/wmvplayer-uncompressed.js</filename>
-        <filename>allmediaplay/wmvplayer.xaml</filename>
-        <filename>allmediaplay/swfobject.js</filename>
-        <filename>allmediaplay/swfobject-uncompressed.js</filename>
-        <filename>allmediaplay/allmediaplay.js</filename>
-        <filename>allmediaplay/allmediaplay-uncompressed.js</filename>
-        <filename>allmediaplay/mediaplayer.swf</filename>
-        <filename>allmediaplay/expressinstall.swf</filename>
-        <filename>allmediaplay/index.html</filename>
-        <filename>allmediaplay/allmediaplaymodal.css</filename>
-        <filename>allmediaplay/closebox.gif</filename>
-        <filename>allmediaplay/160x41_Get_Flash_Player.jpg</filename>
-        <!-- Main files -->
+    <files folder="plugin" destination="allmediaplay">
         <filename plugin="allmediaplay">allmediaplay.php</filename>
+        <filename plugin="allmediaplay">allmediaplay.xml</filename>
+        <folder>allmediaplay</folder>
     </files>
 </install>
