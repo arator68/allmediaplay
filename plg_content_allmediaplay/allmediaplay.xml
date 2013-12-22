@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <install version="2.5" type="plugin" group="content" method="upgrade">
-    <name>Content - AllMediaPlay</name>
+    <name>PLG_NAME</name>
     <author>Rainer Koch</author>
     <creationDate>2013-12-21</creationDate>	
     <copyright>Copyright 2013 by RK-Softwareentwicklung</copyright>
@@ -9,139 +9,139 @@
     <version>1.0.0</version>
     <description>DSC_INFO</description>
     <config>
-    <fields name="params">
-        <fieldset name="basic" addfieldpath="/plugins/content/jw_allvideos/elements">
-            <!--<field name="" type="header" default="LBL_VIDEOPARAMETER" label="" description="" />-->
-            <field name="avcss" type="text" default="allvideos" size="20" label="LBL_CSSCLASS" description="DSC_CSSCLASS" />	
-            <field name="width" type="text" default="400" size="5" label="LBL_WIDTH" description="DSC_WIDTH" />
-            <field name="height" type="text" default="320" size="5" label="LBL_HEIGHT" description="DSC_HEIGHT" />
-            <field name="vdir" type="text" default="videos" size="20" label="LBL_VDIR" description="DSC_VDIR" />
-            <field name="wmode" type="list" default="window" label="LBL_WMODE" description="DSC_WMODE">
-                <option value="window">OPT_WINDOW</option>
-                <option value="transparent">OPT_TRANSPARENT</option>
-                <option value="opaque">OPT_OPAQUE</option>
-            </field>
-            <field name="bgcolor" type="color" default="#FFFFFF" size="6" label="LBL_BGCOLOR" description="DSC_BGCOLOR" />
-            <!--<field name="" type="header" default="LBL_AUDIOPARAMETER" label="" description="" />-->
-            <field name="adir" type="text" default="audio" size="20" label="LBL_ADIR" description="DSC_ADIR" />
-            <field name="awidth" type="text" default="300" size="5" label="LBL_AWIDTH" description="DSC_AWIDTH" />
-            <field name="aheight" type="text" default="20" size="5" label="LBL_AHEIGHT" description="DSC_AHEIGHT" />
-            <field name="ripcache" type="list" default="1" label="LBL_RIPCACHE" description="DSC_RIPCACHE">
-                <option value="1">OPT_YES</option>
-                <option value="0">OPT_NO</option>
-            </field>
-            <field name="cache_time" type="text" default="3600" label="LBL_CACHE_TIME" description="DSC_CACHE_TIME" />            
-        </fieldset>
-        <fieldset name="advanced">
-            <!--<field name="" type="header" default="LBL_PLAYERCONFIG" label="" description="" />-->
-            <field name="flashver" type="list" default="9.0.115" label="LBL_FLASHVER" description="DSC_FLASHVER">
-                <option value="9.0.124">9.0.124</option>
-                <option value="9.0.115">9.0.115</option>
-                <option value="9.0.47">9.0.98</option>
-                <option value="9.0.47">9.0.47</option>
-                <option value="9.0.45">9.0.45</option>
-                <option value="9.0.28">9.0.28</option>
-                <option value="9.0.16">9.0.16</option>
-                <option value="8.0.39">8.0.39</option>
-                <option value="8.0.35">8.0.35</option>
-                <option value="8.0.34">8.0.34</option>
-                <option value="8.0.33">8.0.33</option>
-                <option value="8.0.24">8.0.24</option>
-                <option value="8.0.22">8.0.22</option>
-                <option value="7.0.73">7.0.73</option>
-                <option value="7.0.70">7.0.70</option>
-                <option value="7.0.69">7.0.69</option>
-                <option value="7.0.68">7.0.68</option>
-                <option value="7.0.67">7.0.67</option>
-                <option value="7.0.66">7.0.66</option>
-                <option value="7.0.63">7.0.63</option>
-                <option value="7.0.61">7.0.61</option>
-                <option value="7.0.53">7.0.53</option>
-                <option value="7.0.25">7.0.25</option>
-                <option value="7.0.24">7.0.24</option>
-                <option value="7.0.19">7.0.19</option>
-                <option value="7.0.14">7.0.14</option>
-            </field> 
-            <field name="pbgcolor" type="color" default="#FFFFFF" size="8" label="LBL_PBGCOLOR" description="DSC_PBGCOLOR" />
-            <field name="pfgcolor" type="color" default="#000000" size="8" label="LBL_PFGCOLOR" description="DSC_PFGCOLOR" />
-            <field name="phicolor" type="color" default="#000000" size="8" label="LBL_PHICOLOR" description="DSC_PHICOLOR" />
-            <field name="psccolor" type="color" default="#000000" size="8" label="LBL_PSCCOLOR" description="DSC_PSCCOLOR" />
-            <field name="autostart" type="list" default="0" label="LBL_AUTOSTART" description="DSC_AUTOSTART">
-                <option value="0">OPT_NO</option>
-                <option value="1">OPT_YES</option>
-            </field>
-            <field name="shownav" type="list" default="1" label="LBL_SHOWNAV" description="DSC_SHOWNAV">
-                <option value="0">OPT_NO</option>
-                <option value="1">OPT_YES</option>
-            </field>
-            <field name="showdigits" type="list" default="1" label="LBL_SHOWDIGITS" description="DSC_SHOWDIGITS">
-                <option value="0">OPT_NO</option>
-                <option value="1">OPT_YES</option>
-            </field>
-            <field name="showicons" type="list" default="1" label="LBL_SHOWICONS" description="DSC_SHOWICONS">
-                <option value="0">OPT_NO</option>
-                <option value="1">OPT_YES</option>
-            </field>
-            <field name="showstop" type="list" default="0" label="LBL_SHOWSTOP" description="DSC_SHOWSTOP">
-                <option value="0">OPT_NO</option>
-                <option value="1">OPT_YES</option>
-            </field>
-            <field name="showdownload" type="list" default="0" label="LBL_SHOWDL" description="DSC_SHOWDL">
-                <option value="0">OPT_NO</option>
-                <option value="1">OPT_YES</option>
-            </field>
-            <field name="usefullscreen" type="list" default="0" label="LBL_USEFULLSCREEN" description="DSC_USEFULLSCREEN">
-                <option value="0">OPT_NO</option>
-                <option value="1">OPT_YES</option>
-            </field>
-            <field name="searchbar" type="list" default="0" label="LBL_SHOWSEARCHBAR" description="DSC_SHOWSEARCHBAR">
-                <option value="0">OPT_NO</option>
-                <option value="1">OPT_YES</option>
-            </field>
-            <field name="showeq" type="list" default="0" label="LBL_SHOWEQ" description="DSC_SHOWEQ">
-                <option value="0">OPT_NO</option>
-                <option value="1">OPT_YES</option>
-            </field>
-            <field name="enablejs" type="list" default="0" label="LBL_ENABLEJS" description="DSC_ENABLEJS">
-                <option value="0">OPT_NO</option>
-                <option value="1">OPT_YES</option>
-            </field>
-            <field name="menu" type="list" default="1" label="LBL_MENU" description="DSC_MENU">
-                <option value="0">OPT_NO</option>
-                <option value="1">OPT_YES</option>
-            </field>
-            <field name="searchlink" type="text" default="" size="40" label="LBL_SEARCHLINK" description="DSC_SEARCHLINK" />
-            <field name="logo" type="imagelist" directory="/images" filter="" hide_default="1" default="" label="LBL_LOGO" description="DSC_LOGO" />
-            <field name="screenmode" type="list" default="default" label="LBL_SCREENMODE" description="DSC_SCREENMODE">
-                <option value="default">OPT_DEFAULT</option>
-                <option value="coverlay">OPT_FLOATCONTROL</option>
-                <option value="plbottom">OPT_PLBOTTOM</option>
-                <option value="plright">OPT_PLRIGHT</option>
-                <option value="floatcplright">OPT_FLOATCPLRIGHT</option>
-            </field>
-            <field name="plsize" type="text" default="30" size="5" label="LBL_PLSIZE" description="DSC_PLSIZE" />
-            <field name="stretch" type="list" default="0" label="LBL_STRETCH" description="DSC_STRETCH">
-                <option value="0">OPT_STRETCH_FALSE</option>
-                <option value="1">OPT_STRETCH_TRUE</option>
-                <option value="2">OPT_STRETCH_FIT</option>
-                <option value="3">OPT_STRETCH_NONE</option>
-            </field>
-            <field name="alt" type="textarea" rows="3" cols="40" default="" label="LBL_ALTCONTENT" description="DSC_ALTCONTENT" />
-            <!--<field name="" type="header" default="LBL_KOMPPARAMETER" label="" description="" />-->
-            <field name="legacy" type="list" default="0" label="LBL_LEGACY" description="DSC_LEGACY">
-                <option value="0">OPT_NO</option>
-                <option value="1">OPT_YES</option>
-            </field>
-            <field name="tmargin" type="text" default="8" size="5" label="LBL_TOPMARGIN" description="DSC_TOPMARGIN" />
-            <field name="bmargin" type="text" default="8" size="5" label="LBL_BOTMARGIN" description="DSC_BOTMARGIN" />
-            <field name="valign" type="list" default="center" label="LBL_ALIGN" description="DSC_ALIGN">
-                <option value="center">OPT_CENTER</option>
-                <option value="left">OPT_LEFT</option>
-                <option value="right">OPT_RIGHT</option>
-            </field>
-        </fieldset>
-    </fields>
-</config>
+        <fields name="params">
+            <fieldset name="basic" addfieldpath="/plugins/content/allmediaplay/allmediaplay/elements">
+                <field name="" type="header" default="LBL_VIDEOPARAMETER" label="" description="" />
+                <field name="avcss" type="text" default="allmediaplay" size="20" label="LBL_CSSCLASS" description="DSC_CSSCLASS" />	
+                <field name="width" type="text" default="400" size="5" label="LBL_WIDTH" description="DSC_WIDTH" />
+                <field name="height" type="text" default="320" size="5" label="LBL_HEIGHT" description="DSC_HEIGHT" />
+                <field name="vdir" type="text" default="videos" size="20" label="LBL_VDIR" description="DSC_VDIR" />
+                <field name="wmode" type="list" default="window" label="LBL_WMODE" description="DSC_WMODE">
+                    <option value="window">OPT_WINDOW</option>
+                    <option value="transparent">OPT_TRANSPARENT</option>
+                    <option value="opaque">OPT_OPAQUE</option>
+                </field>
+                <field name="bgcolor" type="color" default="#FFFFFF" size="6" label="LBL_BGCOLOR" description="DSC_BGCOLOR" />
+                <field name="" type="header" default="LBL_AUDIOPARAMETER" label="" description="" />
+                <field name="adir" type="text" default="audio" size="20" label="LBL_ADIR" description="DSC_ADIR" />
+                <field name="awidth" type="text" default="300" size="5" label="LBL_AWIDTH" description="DSC_AWIDTH" />
+                <field name="aheight" type="text" default="20" size="5" label="LBL_AHEIGHT" description="DSC_AHEIGHT" />
+                <field name="ripcache" type="list" default="1" label="LBL_RIPCACHE" description="DSC_RIPCACHE">
+                    <option value="1">OPT_YES</option>
+                    <option value="0">OPT_NO</option>
+                </field>
+                <field name="cache_time" type="text" default="3600" label="LBL_CACHE_TIME" description="DSC_CACHE_TIME" />            
+            </fieldset>
+            <fieldset name="advanced" addfieldpath="/plugins/content/allmediaplay/allmediaplay/elements">
+                <field name="" type="header" default="LBL_PLAYERCONFIG" label="" description="" />
+                <field name="flashver" type="list" default="9.0.115" label="LBL_FLASHVER" description="DSC_FLASHVER">
+                    <option value="9.0.124">9.0.124</option>
+                    <option value="9.0.115">9.0.115</option>
+                    <option value="9.0.47">9.0.98</option>
+                    <option value="9.0.47">9.0.47</option>
+                    <option value="9.0.45">9.0.45</option>
+                    <option value="9.0.28">9.0.28</option>
+                    <option value="9.0.16">9.0.16</option>
+                    <option value="8.0.39">8.0.39</option>
+                    <option value="8.0.35">8.0.35</option>
+                    <option value="8.0.34">8.0.34</option>
+                    <option value="8.0.33">8.0.33</option>
+                    <option value="8.0.24">8.0.24</option>
+                    <option value="8.0.22">8.0.22</option>
+                    <option value="7.0.73">7.0.73</option>
+                    <option value="7.0.70">7.0.70</option>
+                    <option value="7.0.69">7.0.69</option>
+                    <option value="7.0.68">7.0.68</option>
+                    <option value="7.0.67">7.0.67</option>
+                    <option value="7.0.66">7.0.66</option>
+                    <option value="7.0.63">7.0.63</option>
+                    <option value="7.0.61">7.0.61</option>
+                    <option value="7.0.53">7.0.53</option>
+                    <option value="7.0.25">7.0.25</option>
+                    <option value="7.0.24">7.0.24</option>
+                    <option value="7.0.19">7.0.19</option>
+                    <option value="7.0.14">7.0.14</option>
+                </field> 
+                <field name="pbgcolor" type="color" default="#FFFFFF" size="8" label="LBL_PBGCOLOR" description="DSC_PBGCOLOR" />
+                <field name="pfgcolor" type="color" default="#000000" size="8" label="LBL_PFGCOLOR" description="DSC_PFGCOLOR" />
+                <field name="phicolor" type="color" default="#000000" size="8" label="LBL_PHICOLOR" description="DSC_PHICOLOR" />
+                <field name="psccolor" type="color" default="#000000" size="8" label="LBL_PSCCOLOR" description="DSC_PSCCOLOR" />
+                <field name="autostart" type="list" default="0" label="LBL_AUTOSTART" description="DSC_AUTOSTART">
+                    <option value="0">OPT_NO</option>
+                    <option value="1">OPT_YES</option>
+                </field>
+                <field name="shownav" type="list" default="1" label="LBL_SHOWNAV" description="DSC_SHOWNAV">
+                    <option value="0">OPT_NO</option>
+                    <option value="1">OPT_YES</option>
+                </field>
+                <field name="showdigits" type="list" default="1" label="LBL_SHOWDIGITS" description="DSC_SHOWDIGITS">
+                    <option value="0">OPT_NO</option>
+                    <option value="1">OPT_YES</option>
+                </field>
+                <field name="showicons" type="list" default="1" label="LBL_SHOWICONS" description="DSC_SHOWICONS">
+                    <option value="0">OPT_NO</option>
+                    <option value="1">OPT_YES</option>
+                </field>
+                <field name="showstop" type="list" default="0" label="LBL_SHOWSTOP" description="DSC_SHOWSTOP">
+                    <option value="0">OPT_NO</option>
+                    <option value="1">OPT_YES</option>
+                </field>
+                <field name="showdownload" type="list" default="0" label="LBL_SHOWDL" description="DSC_SHOWDL">
+                    <option value="0">OPT_NO</option>
+                    <option value="1">OPT_YES</option>
+                </field>
+                <field name="usefullscreen" type="list" default="0" label="LBL_USEFULLSCREEN" description="DSC_USEFULLSCREEN">
+                    <option value="0">OPT_NO</option>
+                    <option value="1">OPT_YES</option>
+                </field>
+                <field name="searchbar" type="list" default="0" label="LBL_SHOWSEARCHBAR" description="DSC_SHOWSEARCHBAR">
+                    <option value="0">OPT_NO</option>
+                    <option value="1">OPT_YES</option>
+                </field>
+                <field name="showeq" type="list" default="0" label="LBL_SHOWEQ" description="DSC_SHOWEQ">
+                    <option value="0">OPT_NO</option>
+                    <option value="1">OPT_YES</option>
+                </field>
+                <field name="enablejs" type="list" default="0" label="LBL_ENABLEJS" description="DSC_ENABLEJS">
+                    <option value="0">OPT_NO</option>
+                    <option value="1">OPT_YES</option>
+                </field>
+                <field name="menu" type="list" default="1" label="LBL_MENU" description="DSC_MENU">
+                    <option value="0">OPT_NO</option>
+                    <option value="1">OPT_YES</option>
+                </field>
+                <field name="searchlink" type="text" default="" size="40" label="LBL_SEARCHLINK" description="DSC_SEARCHLINK" />
+                <field name="logo" type="imagelist" directory="/images" filter="" hide_default="1" default="" label="LBL_LOGO" description="DSC_LOGO" />
+                <field name="screenmode" type="list" default="default" label="LBL_SCREENMODE" description="DSC_SCREENMODE">
+                    <option value="default">OPT_DEFAULT</option>
+                    <option value="coverlay">OPT_FLOATCONTROL</option>
+                    <option value="plbottom">OPT_PLBOTTOM</option>
+                    <option value="plright">OPT_PLRIGHT</option>
+                    <option value="floatcplright">OPT_FLOATCPLRIGHT</option>
+                </field>
+                <field name="plsize" type="text" default="30" size="5" label="LBL_PLSIZE" description="DSC_PLSIZE" />
+                <field name="stretch" type="list" default="0" label="LBL_STRETCH" description="DSC_STRETCH">
+                    <option value="0">OPT_STRETCH_FALSE</option>
+                    <option value="1">OPT_STRETCH_TRUE</option>
+                    <option value="2">OPT_STRETCH_FIT</option>
+                    <option value="3">OPT_STRETCH_NONE</option>
+                </field>
+                <field name="alt" type="textarea" rows="3" cols="40" default="" label="LBL_ALTCONTENT" description="DSC_ALTCONTENT" />
+                <field name="" type="header" default="LBL_KOMPPARAMETER" label="" description="" />
+                <field name="legacy" type="list" default="0" label="LBL_LEGACY" description="DSC_LEGACY">
+                    <option value="0">OPT_NO</option>
+                    <option value="1">OPT_YES</option>
+                </field>
+                <field name="tmargin" type="text" default="8" size="5" label="LBL_TOPMARGIN" description="DSC_TOPMARGIN" />
+                <field name="bmargin" type="text" default="8" size="5" label="LBL_BOTMARGIN" description="DSC_BOTMARGIN" />
+                <field name="valign" type="list" default="center" label="LBL_ALIGN" description="DSC_ALIGN">
+                    <option value="center">OPT_CENTER</option>
+                    <option value="left">OPT_LEFT</option>
+                    <option value="right">OPT_RIGHT</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
        
     <!-- Language files -->
     <languages folder="plugin">
