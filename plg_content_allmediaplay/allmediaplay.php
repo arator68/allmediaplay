@@ -22,12 +22,12 @@ if (version_compare(JVERSION, '1.6.0', 'ge')){
 
 class plgContentAllMediaPlay extends JPlugin {
     
-    var $_version = '1.2.7';
-    var $_rev = '$Revision: 1054 $';
+    var $_version = '1.0.0';
+    var $_rev = '$Revision: 1 $';
     // Our standard header
-    var $_beg = "<!-- AllVideos Reloaded Plugin (%s) starts here\n-->!!WARN_JS!!<%s id=\"@DIVID@\"%s class=\"%s\">!!WARN_FL1!!</%s>";
+    var $_beg = "<!-- AllMediaPlay Plugin (%s) starts here\n-->!!WARN_JS!!<%s id=\"@DIVID@\"%s class=\"%s\">!!WARN_FL1!!</%s>";
     // Our standard trailer
-    var $_end = "!!WARN_FL2!!<!--\nAllVideos Reloaded Plugin (%s) ends here -->";
+    var $_end = "!!WARN_FL2!!<!--\nAllMediaPlay Plugin (%s) ends here -->";
     // The height of the builtin player's controls
     var $_ctrlheight = 20;
     // "Web" color names as specified by HTML 4.01
@@ -190,7 +190,7 @@ class plgContentAllMediaPlay extends JPlugin {
         $language_name= 'plg_content_' . $this->plg_name;
         JPlugin::loadLanguage($language_name, JPATH_ADMINISTRATOR);
         //JPlugin::loadLanguage('plg_content_allmediaplay', JPATH_ADMINISTRATOR);
-        /*$mparams =& JComponentHelper::getParams('com_media');
+        $mparams =& JComponentHelper::getParams('com_media');
         $this->_mloc = JURI::root().'/'.$mparams->get('image_path', 'images/stories').'/';
         $this->_rdir = JPATH_PLUGINS.DS.'content'.DS.'allmediaplay'.DS;
         $this->_rlocr = 'plugins/content/allmediaplay/';
@@ -203,11 +203,11 @@ class plgContentAllMediaPlay extends JPlugin {
 
         $this->_vtag = 'v'.$this->_version.'.'.preg_replace('#\D#', '', $this->_rev);
 
-        $tags = null;*/
+        $tags = null;
         // Check for our corresponding component which owns the db tables.
         if (JComponentHelper::isEnabled('com_allmediaplay', true)) {
             $db = &JFactory::getDBO();
-            $query = 'SELECT name,player_id,ripper_id,postreplace FROM #__avr_tags';
+            $query = 'SELECT name,player_id,ripper_id,postreplace FROM #__allmediaplay_tags';
             $db->setQuery($query);
             $db->query();
             $tags = $db->loadObjectList();
@@ -428,7 +428,7 @@ class plgContentAllMediaPlay extends JPlugin {
                         // If a ripper is defined, execute it
                         if ($tag->ripper_id != 0) {
                             $robj = null;
-                            $query = 'SELECT * FROM #__avr_ripper where id = ' . $tag->ripper_id;
+                            $query = 'SELECT * FROM #__allmediaplay_ripper where id = ' . $tag->ripper_id;
                             @$db->setQuery($query);
                             @$db->query();
                             @$robj = $db->loadObject();
