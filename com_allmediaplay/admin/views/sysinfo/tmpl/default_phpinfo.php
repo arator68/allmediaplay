@@ -6,15 +6,10 @@
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
 
+// no direct access
 defined('_JEXEC') or die;
-
-/**
- * Admin Controller
- *
- * @package		Joomla.Administrator
- * @subpackage	com_admin
- * @since 1.6
- */
-class AdminController extends JControllerLegacy
-{
-}
+?>
+<fieldset class="adminform">
+	<legend><?php echo JText::_('COM_ADMIN_PHP_INFORMATION'); ?></legend>
+	<?php echo $this->php_info;?>
+</fieldset>
