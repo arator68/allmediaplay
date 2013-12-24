@@ -23,13 +23,13 @@ class AllMediaPlayViewInsert extends JView
      * @return void
      **/
     function display($tpl = null) {
-        $plg = JPluginHelper::getPlugin('content', 'allmediaplay');
-        $pp = new JParameter($plg->params);
+        //$plg =& JPluginHelper::getPlugin('content', 'avreloaded');
+        //$pp = new JParameter($plg->params);
         $app = JFactory::getApplication();
         $doc = JFactory::getDocument();
         //$doc->addStyleSheet(JURI::root(true).'/administrator/templates/khepri/css/general.css');
         //$doc->addStyleSheet(JURI::root(true).'/administrator/templates/khepri/css/component.css');
-        $js_ins = 'popup-insert-uncompressed.js';
+        $js_ins = 'popup-insert.js';
         $cfg = JFactory::getConfig();
         $debug = $cfg->getValue('config.debug');
         $konqcheck = strpos(strtolower($_SERVER['HTTP_USER_AGENT']), "konqueror");
@@ -41,11 +41,10 @@ class AllMediaPlayViewInsert extends JView
         JHTML::script($js_ins, 'administrator/components/com_allmediaplay/assets/');
         //$doc->addScript('/administrator/components/com_allmediaplay/assets/popup-insert.js');
         //JHTML::script('administrator/components/com_allmediaplay/assets/popup-insert.js');
-        //JHTML::_('behavior.tooltip');
-        JHtml::_('behavior.framework', true);
+        JHTML::_('behavior.tooltip');
         jimport('joomla.html.pane');
-        $pane =JPane::getInstance('Tabs', array('startOffset' => JRequest::getInt('local',0)));
-        $data =$this->_getProvider($pp, $app);
+        $pane =& JPane::getInstance('Tabs', array('startOffset' => JRequest::getInt('local',0)));
+        $data =& $this->_getProvider($pp, $app);
         $data['mselector'] = $this->_getLocalMedia('mloc', $data['mloc']);
         $doc->addScriptDeclaration($data['js']);
         $this->assignRef('data', $data);
@@ -86,7 +85,7 @@ class AllMediaPlayViewInsert extends JView
         return $ret;
     }
 
-    function &_getProvider($params, $app) {
+    function &_getProvider(&$params, &$app) {
         $w = $params->get('width', 400);
         $h = $params->get('height', 320);
         $ret['playlist'] = JRequest::getInt('playlist', 0);
@@ -120,17 +119,17 @@ class AllMediaPlayViewInsert extends JView
         }
         $db =& JFactory::getDBO();
         $playlist = JRequest::getInt('playlist', 0);
-        $jw_where = ($playlist) ? ' AND #__allmediaplay_tags.plist = 1 ' : '';
-        $query = 'SELECT #__allmediaplay_tags.id,#__allmediaplay_tags.name,#__allmediaplay_tags.description,sampleregex,isjw,local '.
-            'FROM #__allmediaplay_tags,#__allmediaplay_player '.
-            'WHERE #__allmediaplay_player.id = player_id '.$jw_where.
+        $jw_where = ($playlist) ? ' AND #__avr_tags.plist = 1 ' : '';
+        $query = 'SELECT #__avr_tags.id,#__avr_tags.name,#__avr_tags.description,sampleregex,isjw,local '.
+            'FROM #__avr_tags,#__avr_player '.
+            'WHERE #__avr_player.id = player_id '.$jw_where.
             'ORDER by description, name';
         $db->setQuery($query);
         $opts = array();
         $lopts = array();
         $js = "// <![CDATA[\nvar avri = null;\n".
             "window.addEvent('domready', function(){\n".
-            "  avri = new AllMediaPlayInsert();\n".
+            "  avri = new AvReloadedInsert();\n".
             "  var tags = new Array(\n";
         $ljs = "  var ltags = new Array(\n";
         $cnt = 0;
@@ -169,8 +168,8 @@ class AllMediaPlayViewInsert extends JView
      * Build the select list to choose local media
      */
     function _getLocalMedia($name, $active = null) {
-        $adir = AllMediaPlayGenericHelper::getAdir();
-        $vdir = AllMediaPlayGenericHelper::getVdir();
+        $adir = AvrGenericHelper::getAdir();
+        $vdir = AvrGenericHelper::getVdir();
         $js = 'onchange="return avri.matchLOC(this.value);"';
 
         jimport('joomla.filesystem.folder');
