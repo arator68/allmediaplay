@@ -1,5 +1,5 @@
 /*!	$Id: popup-insert-uncompressed.js 989 2008-06-25 19:02:32Z Fritz Elfert $ */
-function AllMediaPlayInsert() {
+function AvReloadedInsert() {
 
 	this.init = function(tags,ltags,w,h,havepv) {
 		o = this._getUriObject(window.self.location.href);
@@ -46,10 +46,10 @@ function AllMediaPlayInsert() {
 
     this.buildTag = function(local, t) {
         if (local) {
-            var w = this.fields.lwidth.value;
-            var h = this.fields.lheight.value;
-            var t = this.fields.ltagid.value;
-            var p = this.fields.lprovider.value;
+            var w = this.fields.lwidth.getValue();
+            var h = this.fields.lheight.getValue();
+            var t = this.fields.ltagid.getValue();
+            var p = this.fields.lprovider.getValue();
 
             for (var i = 0; i < this.ltags.length; i++) {
                 if (this.ltags[i].val == p) {
@@ -68,10 +68,10 @@ function AllMediaPlayInsert() {
                 }
             }
         } else {
-            var w = this.fields.width.value;
-            var h = this.fields.height.value;
-            var t = this.fields.tagid.value;
-            var p = this.fields.provider.value;
+            var w = this.fields.width.getValue();
+            var h = this.fields.height.getValue();
+            var t = this.fields.tagid.getValue();
+            var p = this.fields.provider.getValue();
 
             for (var i = 0; i < this.tags.length; i++) {
                 if (this.tags[i].val == p) {
@@ -130,7 +130,7 @@ function AllMediaPlayInsert() {
 
     this.checkTag = function(local) {
         if (local) {
-            var v = this.fields.lmtag.value;
+            var v = this.fields.lmtag.getValue();
             for (var i = 0; i < this.ltags.length; i++) {
                 var t = this.ltags[i].tag;
                 var rx = new RegExp('^{'+t+'.*}.+{/'+t+'}$');
@@ -140,7 +140,7 @@ function AllMediaPlayInsert() {
                 }
             }
         } else {
-            var v = this.fields.mtag.value;
+            var v = this.fields.mtag.getValue();
             for (var i = 0; i < this.tags.length; i++) {
                 var t = this.tags[i].tag;
                 var rx = new RegExp('^{'+t+'.*}.+{/'+t+'}$');
@@ -163,11 +163,11 @@ function AllMediaPlayInsert() {
 
     this.onok = function(local) {
         if (this.playlist) {
-            var uri = (local) ? 'local:'+this.fields.mloc.value : this.fields.url.value;
+            var uri = (local) ? 'local:'+this.fields.mloc.getValue() : this.fields.url.getValue();
             window.parent.plinsert(uri);
         } else {
-            var tag = (local) ? this.fields.lmtag.value : this.fields.mtag.value;
-            window.parent.jInsertEditorText(tag, this.editor);    
+            var tag = (local) ? this.fields.lmtag.getValue() : this.fields.mtag.getValue();
+            window.parent.jInsertEditorText(tag, this.editor);
         }
         return false;
     };

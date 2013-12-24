@@ -50,7 +50,7 @@ class AllMediaPlayGenericHelper {
     function getVdir() {
         $mparams =& JComponentHelper::getParams('com_media');
         $mdir = JPATH_ROOT.DS.$mparams->get('image_path', 'images'.DS.'stories');
-        $plg =& JPluginHelper::getPlugin('content', 'allmediaplay');
+        $plg =& JPluginHelper::getPlugin('content', 'avreloaded');
         $pparams = new JParameter($plg->params);
         $vdir = $pparams->get('vdir', 'videos');
         if (JString::strpos($vdir, '/') === 0) {
@@ -64,7 +64,7 @@ class AllMediaPlayGenericHelper {
     function getAdir() {
         $mparams =& JComponentHelper::getParams('com_media');
         $mdir = JPATH_ROOT.DS.$mparams->get('image_path', 'images'.DS.'stories');
-        $plg =& JPluginHelper::getPlugin('content', 'allmediaplay');
+        $plg =& JPluginHelper::getPlugin('content', 'avreloaded');
         $pparams = new JParameter($plg->params);
         $adir = $pparams->get('adir', 'audio');
         if (JString::strpos($adir, '/') === 0) {

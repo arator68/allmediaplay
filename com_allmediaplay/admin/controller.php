@@ -1,20 +1,39 @@
 <?php
-/**
- * @package		Joomla.Administrator
- * @subpackage	com_admin
- * @copyright	Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
- * @license		GNU General Public License version 2 or later; see LICENSE.txt
- */
-
-defined('_JEXEC') or die;
 
 /**
- * Admin Controller
- *
- * @package		Joomla.Administrator
- * @subpackage	com_admin
- * @since 1.6
+ * @package RK-Softwareentwicklung AllMediaPlay Component
+ * @author RK-Softwareentwicklung
+ * @copyright (C) 2013 RK-Softwareentwicklung
+ * @version 1.0.0
+ * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ * */
+// No direct access to this file
+defined('_JEXEC') or die('Restricted access');
+
+// import Joomla controller library
+jimport('joomla.application.component.controller');
+
+/**
+ * General Controller of HelloWorld component
  */
-class AdminController extends JControllerLegacy
+class AllMediaPlayController extends JController
 {
+
+    /**
+     * display task
+     *
+     * @return void
+     */
+    function display($cachable = false)
+    {
+        // set default view if not set
+        JRequest::setVar('view', JRequest::getCmd('view', 'AllMediaPlays'));
+
+        // call parent behavior
+        parent::display($cachable);
+
+        // Set the submenu
+        AllMediaPlayHelper::addSubmenu('player');
+    }
+
 }
