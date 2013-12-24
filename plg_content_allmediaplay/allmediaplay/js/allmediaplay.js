@@ -129,7 +129,7 @@ function AvrPopup(E, F, C) {
             };
             SqueezeBox.fromElement(B, D)
         } else {
-            var A = window.open(decodeURIComponent(D.url), "avrpopup" + F, "status=no,toolbar=no,scrollbars=no,titlebar=no,menubar=no,resizable=no,width=" + D.size.x + ",height=" + D.size.y + ",directories=no,location=no");
+            var A = window.open(decodeURIComponent(D.url), "allmediaplaypopup" + F, "status=no,toolbar=no,scrollbars=no,titlebar=no,menubar=no,resizable=no,width=" + D.size.x + ",height=" + D.size.y + ",directories=no,location=no");
             A.focus()
         }
     }
