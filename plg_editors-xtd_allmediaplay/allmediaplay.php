@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @package RK-Softwareentwicklung Allvideo Button
+ * @package RK-Softwareentwicklung AllMediaPlay Button
  * @author RK-Softwareentwicklung
  * @copyright (C) 2013 RK-Softwareentwicklung
  * @version 1.0.0
