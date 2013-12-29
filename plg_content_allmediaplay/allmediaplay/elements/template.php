@@ -18,7 +18,7 @@ class JWElementTemplate extends JWElement
 	public function fetchElement($name, $value, &$node, $control_name)
 	{
 		jimport('joomla.filesystem.folder');
-		$plgTemplatesPath = version_compare(JVERSION, '1.6', 'ge') ? JPATH_SITE.'/plugins/content/jw_allvideos/jw_allvideos/tmpl' : JPATH_SITE.'/plugins/content/jw_allvideos/tmpl';
+		$plgTemplatesPath = version_compare(JVERSION, '1.6', 'ge') ? JPATH_SITE.'/plugins/content/allmediaplay/allmediaplay/tmpl' : JPATH_SITE.'/plugins/content/jw_allvideos/tmpl';
 		$plgTemplatesFolders = JFolder::folders($plgTemplatesPath);
 		$db = JFactory::getDBO();
 		if (version_compare(JVERSION, '1.6', 'ge'))

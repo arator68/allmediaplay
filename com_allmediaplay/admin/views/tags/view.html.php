@@ -1,0 +1,87 @@
+<?php
+
+/**
+ * @package RK-Softwareentwicklung AllMediaPlay Component
+ * @author RK-Softwareentwicklung
+ * @copyright (C) 2013 RK-Softwareentwicklung
+ * @version 1.0.0
+ * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ * */
+
+// No direct access to this file
+defined('_JEXEC') or die('Restricted access');
+
+// import Joomla view library
+jimport('joomla.application.component.view');
+
+/**
+ * HelloWorlds View
+ */
+class AllMediaPlayViewTags extends JView
+{
+	/**
+	 * HelloWorlds view display method
+	 * @return void
+	 */
+	function display($tpl = null) 
+	{
+		// Get data from the model
+		$items = $this->get('Items');
+		$pagination = $this->get('Pagination');
+
+		// Check for errors.
+		if (count($errors = $this->get('Errors'))) 
+		{
+			JError::raiseError(500, implode('<br />', $errors));
+			return false;
+		}
+		// Assign data to the view
+		$this->items = $items;
+		$this->pagination = $pagination;
+
+		// Set the toolbar
+		$this->addToolBar();
+
+		// Display the template
+		parent::display($tpl);
+
+		// Set the document
+		$this->setDocument();
+	}
+
+	/**
+	 * Setting the toolbar
+	 */
+	protected function addToolBar() 
+	{
+		$canDo = AllMediaPlayHelper::getActions();
+		JToolBarHelper::title(JText::_('COM_ALLMEDIAPLAY_MANAGER_ALLMEDIAPLAYS'), 'allmediaplay');
+		if ($canDo->get('core.create')) 
+		{
+			JToolBarHelper::addNew('tag.add', 'JTOOLBAR_NEW');
+		}
+		if ($canDo->get('core.edit')) 
+		{
+			JToolBarHelper::editList('tag.edit', 'JTOOLBAR_EDIT');
+		}
+		if ($canDo->get('core.delete')) 
+		{
+			JToolBarHelper::deleteList('', 'tag.delete', 'JTOOLBAR_DELETE');
+		}
+		if ($canDo->get('core.admin')) 
+		{
+			JToolBarHelper::divider();
+			JToolBarHelper::preferences('com_allmediaplay');
+		}
+	}
+	/**
+	 * Method to set up the document properties
+	 *
+	 * @return void
+	 */
+	protected function setDocument() 
+	{
+		$document = JFactory::getDocument();
+		$document->setTitle(JText::_('COM_ALLMEDIAPLAY_ADMINISTRATION'));
+	}
+}

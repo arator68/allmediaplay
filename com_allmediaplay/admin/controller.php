@@ -14,7 +14,7 @@ defined('_JEXEC') or die('Restricted access');
 jimport('joomla.application.component.controller');
 
 /**
- * General Controller of HelloWorld component
+ * General Controller of AllMediaPlay component
  */
 class AllMediaPlayController extends JController
 {
@@ -26,14 +26,32 @@ class AllMediaPlayController extends JController
      */
     function display($cachable = false)
     {
-        // set default view if not set
-        JRequest::setVar('view', JRequest::getCmd('view', 'AllMediaPlays'));
+//        $view = JRequest::getCmd('view', null);
+//        if (empty($view))
+//        {
+//            // set default view if not set
+//            JRequest::setVar('view', JRequest::getCmd('view', 'AllMediaPlays'));  
+//        }
+//        else
+//        {
+//            $view = $this->getView(JRequest::getVar('view'), 'html');
+//            $view->setModel($this->getModel('tags'));
+//        }
+//        // call parent behavior
+//        parent::display($cachable);
+//
+//        // Set the submenu
+//        $actview = $this->getView(JRequest::getVar('view'), 'html');
+//        AllMediaPlayHelper::addSubmenu($actview->getName());
+        
+       // set default view if not set
+		JRequest::setVar('view', JRequest::getCmd('view', 'AllMediaPlays'));
 
-        // call parent behavior
-        parent::display($cachable);
+		// call parent behavior
+		parent::display($cachable);
 
-        // Set the submenu
-        AllMediaPlayHelper::addSubmenu('player');
+		// Set the submenu
+		AllMediaPlayHelper::addSubmenu('messages'); 
     }
 
 }

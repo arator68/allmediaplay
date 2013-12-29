@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- $Id: player.xml 74 2010-12-01 22:04:52Z chdemko $ -->
+<form
+	addrulepath="/administrator/components/com_allmediaplay/models/rules"
+>
+	<fieldset name="details">
+		<field
+			name="id"
+			type="hidden"
+		/>
+		<field
+			name="version"
+			type="text"
+			label="COM_ALLMEDIAPLAY_FORM_PLAYER_VERSION"
+			description="COM_HELLOWORLD_HELLOWORLD_FIELD_GREETING_DESC"
+			size="8"
+			class="inputbox"
+			required="false"
+			default=""
+		/>
+		<field
+			name="location"
+			type="text"
+			class="inputbox"
+                        size="25"
+			default=""
+			label="COM_ALLMEDIAPLAY_FORM_PLAYER_LOCATION"
+			description="COM_HELLOWORLD_HELLOWORLD_FIELD_CATID_DESC"
+			required="true"
+		>
+		</field>
+                <field
+			name="code"
+			type="textarea"
+                        filter="raw"
+			class="inputbox"
+                        rows="20"
+			default=""
+			label="COM_ALLMEDIAPLAY_FORM_PLAYER_CODE"
+			description="COM_HELLOWORLD_HELLOWORLD_FIELD_CATID_DESC"
+			required="true"
+		>
+		</field>
+                <field
+			name="description"
+			type="text"
+			class="inputbox"
+                        size="40"
+			default=""
+			label="COM_ALLMEDIAPLAY_FORM_PLAYER_DESCRIPTION"
+			description="COM_HELLOWORLD_HELLOWORLD_FIELD_CATID_DESC"
+			required="true"
+		>
+		</field>
+	</fieldset>	
+</form>
+

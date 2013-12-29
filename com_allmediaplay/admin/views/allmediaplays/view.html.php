@@ -15,7 +15,7 @@ defined('_JEXEC') or die('Restricted access');
 jimport('joomla.application.component.view');
 
 /**
- * HelloWorlds View
+ * AllMEdiaPlays View
  */
 class AllMediaPlayViewAllMediaPlays extends JView
 {
@@ -58,21 +58,21 @@ class AllMediaPlayViewAllMediaPlays extends JView
 		JToolBarHelper::title(JText::_('COM_ALLMEDIAPLAY_MANAGER_ALLMEDIAPLAYS'), 'allmediaplay');
 		if ($canDo->get('core.create')) 
 		{
-			JToolBarHelper::addNew('allmediaplay.add', 'JTOOLBAR_NEW');
+			JToolBarHelper::addNew('player.add', 'JTOOLBAR_NEW');
 		}
 		if ($canDo->get('core.edit')) 
 		{
-			JToolBarHelper::editList('allmediaplay.edit', 'JTOOLBAR_EDIT');
+			JToolBarHelper::editList('player.edit', 'JTOOLBAR_EDIT');
 		}
 		if ($canDo->get('core.delete')) 
 		{
-			JToolBarHelper::deleteList('', 'allmediaplay.delete', 'JTOOLBAR_DELETE');
+			JToolBarHelper::deleteList('', 'player.delete', 'JTOOLBAR_DELETE');
 		}
-		if ($canDo->get('core.admin')) 
-		{
-			JToolBarHelper::divider();
-			JToolBarHelper::preferences('com_allmediaplay');
-		}
+//		if ($canDo->get('core.admin')) 
+//		{
+//			JToolBarHelper::divider();
+//			JToolBarHelper::preferences('com_allmediaplay');
+//		}
 	}
 	/**
 	 * Method to set up the document properties

@@ -31,10 +31,10 @@ class AllMediaPlayModelAllMediaPlays extends JModelList
 		$query = $db->getQuery(true);
 
 		// Select some fields
-		$query->select('id,name,description');
+		$query->select('id,location,description');
 
 		// From the hello table
-		$query->from('#__allmediaplay_player');
+		$query->from('#__allmediaplay_playerlist');
 		return $query;
 	}
 }

@@ -18,12 +18,12 @@ defined('_JEXEC') or die('Restricted Access');
 			<?php echo JHtml::_('grid.id', $i, $item->id); ?>
 		</td>
 		<td>
-			<a href="<?php echo JRoute::_('index.php?option=com_allmediaplay&task=allmediaplay.edit&id=' . $item->id); ?>">
-				<?php echo $item->name; ?>
+			<a href="<?php echo JRoute::_('index.php?option=com_allmediaplay&task=player.edit&id=' . $item->id); ?>">
+				<?php echo $item->location; ?>
 			</a>
 		</td>
                 <td>
-			<a href="<?php echo JRoute::_('index.php?option=com_allmediaplay&task=allmediaplay.edit&id=' . $item->id); ?>">
+			<a href="<?php echo JRoute::_('index.php?option=com_allmediaplay&task=player.edit&id=' . $item->id); ?>">
 				<?php echo $item->description; ?>
 			</a>
 		</td>

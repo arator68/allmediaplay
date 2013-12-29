@@ -23,7 +23,7 @@ JLoader::register('AllMediaPlayHelper', dirname(__FILE__) . DS . 'helpers' . DS 
 // import joomla controller library
 jimport('joomla.application.component.controller');
 
-// Get an instance of the controller prefixed by HelloWorld
+// Get an instance of the controller prefixed by AllMediaPlay
 $controller = JController::getInstance('AllMediaPlay');
 
 // Perform the Request task

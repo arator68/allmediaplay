@@ -21,16 +21,16 @@ abstract class AllMediaPlayHelper
 	 */
 	public static function addSubmenu($submenu) 
 	{
-                JSubMenuHelper::addEntry(JText::_('COM_ALLMEDIAPLAY_SUBMENU_PLAYER'), 'index.php?option=com_allmediaplay', $submenu == 'player');
-		//JSubMenuHelper::addEntry(JText::_('COM_ALLMEDIAPLAY_SUBMENU_MESSAGES'), 'index.php?option=com_allmediaplay', $submenu == 'messages');
-		JSubMenuHelper::addEntry(JText::_('COM_ALLMEDIAPLAY_SUBMENU_CATEGORIES'), 'index.php?option=com_categories&view=categories&extension=com_allmediaplay', $submenu == 'categories');
+                JSubMenuHelper::addEntry(JText::_('COM_ALLMEDIAPLAY_SUBMENU_PLAYER'), 'index.php?option=com_allmediaplay', $submenu == 'messages');
+		JSubMenuHelper::addEntry(JText::_('COM_ALLMEDIAPLAY_SUBMENU_TAGS'), 'index.php?option=com_allmediaplay&view=tags', $submenu == 'tags');
+		//JSubMenuHelper::addEntry(JText::_('COM_ALLMEDIAPLAY_SUBMENU_CATEGORIES'), 'index.php?option=com_categories&view=categories&extension=com_allmediaplay', $submenu == 'categories');
 		// set some global property
 		$document = JFactory::getDocument();
-		$document->addStyleDeclaration('.icon-48-allmediaplay {background-image: url(../media/com_allmediaplay/images/allmediaplay-48x48.png);}');
-		if ($submenu == 'categories') 
+		$document->addStyleDeclaration('.icon-48-allmediaplay {background-image: url('.JURI::root().'media/com_allmediaplay/images/allmediaplay-48x48.png);}');
+		/*if ($submenu == 'categories') 
 		{
 			$document->setTitle(JText::_('COM_ALLMEDIAPLAY_ADMINISTRATION_CATEGORIES'));
-		}
+		}*/
 	}
 	/**
 	 * Get the actions

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="1.6.0" method="upgrade">
+	<name>COM_ALLMEDIAPLAY</name>
+	<author>Rainer Koch</author>
+        <creationDate>2013-12-21</creationDate>	
+        <copyright>Copyright 2013 by RK-Softwareentwicklung</copyright>
+        <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+        <authorEmail>koch.rainer@live.de</authorEmail>
+        <version>1.0.0</version>
+	<description>COM_ALLMEDIAPLAY_DESCRIPTION</description>
+	<scriptfile>script.php</scriptfile>
+
+	<install> <!-- Runs on install -->
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install_utf8.sql</file>
+			<file driver="mysql">sql/install.sql</file>
+		</sql>
+	</install>
+	<uninstall> <!-- Runs on uninstall -->
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.sql</file>
+                        <file driver="mysql">sql/uninstall.sql</file>
+		</sql>
+	</uninstall>
+              
+	<!-- Site Main File Copy Section -->
+	<!-- Note the folder attribute: This attribute describes the folder
+		to copy FROM in the package to install therefore files copied
+		in this section are copied from /site/ in the package -->
+        <media destination="com_allmediaplay" folder="media">
+		<filename>index.html</filename>
+		<folder>images</folder>
+	</media>
+	<administration>
+		<!-- Administration Menu Section -->
+		<menu img="../media/com_allmediaplay/images/allmediaplay-16x16.png">COM_ALLMEDIAPLAY_MENU</menu>
+                <submenu>
+                    <menu link="option=com_allmediaplay&amp;view=tags" view="tags" img="../media/com_allmediaplay/images/allmediaplay-16x16.png">AVR_TITLE_MANAGE_PLAYERS</menu>
+                </submenu>
+		<!-- Administration Main File Copy Section -->
+		<!-- Note the folder attribute: This attribute describes the folder
+			to copy FROM in the package to install therefore files copied
+			in this section are copied from /admin/ in the package -->
+		<files folder="admin">
+			<!-- Admin Main File Copy Section -->
+			<filename>index.html</filename>
+			<filename>allmediaplay.php</filename>
+			<filename>controller.php</filename>
+                        <filename>config.xml</filename>
+			<filename>access.xml</filename>
+                        <filename>index.php</filename>
+                        <!-- Assets files section -->
+			<folder>assets</folder>
+                        <!-- SQL files section -->
+			<folder>sql</folder>
+			<!-- models files section -->
+			<folder>models</folder>
+			<!-- views files section -->
+			-<folder>views</folder>
+			<!-- controllers files section -->
+			<folder>controllers</folder>
+			<!-- helpers files section -->
+			<folder>helpers</folder>
+                        <!-- helpers files section -->
+			<folder>elements</folder>
+		</files>
+
+		<languages folder="admin">
+			<language tag="de-DE">language/de-DE/de-DE.com_allmediaplay.ini</language>
+			<language tag="de-DE">language/de-DE/de-DE.com_allmediaplay.sys.ini</language>
+		</languages>
+	</administration>
+
+</extension>
+
+

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- $Id: player.xml 74 2010-12-01 22:04:52Z chdemko $ -->
+<form
+	addrulepath="/administrator/components/com_allmediaplay/models/rules"
+>
+	<fieldset name="details">
+		<field
+			name="id"
+			type="hidden"
+		/>
+		<field
+			name="player_id"
+			type="tag"
+			label="COM_ALLMEDIAPLAY_FORM_TAG_PLAYER_ID"
+			description="COM_HELLOWORLD_HELLOWORLD_FIELD_GREETING_DESC"
+			required="true"
+			default=""
+		/>
+		<field
+			name="plist"
+			type="list"
+			default=""
+			label="COM_ALLMEDIAPLAY_FORM_TAG_PLIST"
+			description="COM_HELLOWORLD_HELLOWORLD_FIELD_CATID_DESC"
+			required="true"
+		>
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+		</field>
+                <field
+			name="name"
+			type="text"
+			class="inputbox"
+                        size="25"
+			default=""
+			label="COM_ALLMEDIAPLAY_FORM_TAG_NAME"
+			description="COM_HELLOWORLD_HELLOWORLD_FIELD_CATID_DESC"
+			required="true"
+		>
+		</field>
+                <field
+			name="description"
+			type="text"
+			class="inputbox"
+                        size="40"
+			default=""
+			label="COM_ALLMEDIAPLAY_FORM_TAG_DESCRIPTION"
+			description="COM_HELLOWORLD_HELLOWORLD_FIELD_CATID_DESC"
+			required="true"
+		>
+		</field>
+	</fieldset>	
+</form>
+

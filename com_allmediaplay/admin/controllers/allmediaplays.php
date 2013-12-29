@@ -23,7 +23,7 @@ class AllMediaPlayControllerAllMediaPlays extends JControllerAdmin
 	 * Proxy for getModel.
 	 * @since	1.6
 	 */
-	public function getModel($name = 'AllMediaPlay', $prefix = 'AllMediaPlayModel') 
+	public function getModel($name = 'AllMediaPlays', $prefix = 'AllMediaPlayModel') 
 	{
 		$model = parent::getModel($name, $prefix, array('ignore_request' => true));
 		return $model;
