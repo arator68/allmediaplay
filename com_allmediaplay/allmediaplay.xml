@@ -34,6 +34,9 @@
 	<administration>
 		<!-- Administration Menu Section -->
 		<menu img="../media/com_allmediaplay/images/allmediaplay-16x16.png">COM_ALLMEDIAPLAY_MENU</menu>
+                <submenu>
+                    <menu link="option=com_allmediaplay&amp;view=tags" view="tags" img="../media/com_allmediaplay/images/allmediaplay-16x16.png">AVR_TITLE_MANAGE_PLAYERS</menu>
+                </submenu>
 		<!-- Administration Main File Copy Section -->
 		<!-- Note the folder attribute: This attribute describes the folder
 			to copy FROM in the package to install therefore files copied
