@@ -45,7 +45,7 @@ class AllMediaPlayController extends JController
 //        AllMediaPlayHelper::addSubmenu($actview->getName());
         
        // set default view if not set
-		JRequest::setVar('view', JRequest::getCmd('view', 'AllMediaPlays'));
+		JRequest::setVar('view', JRequest::getCmd('view', 'allmediaplays'));
                 AllMediaPlayHelper::addSubmenu(JRequest::getCmd('view', 'allmediaplays'));
 
 		// call parent behavior
