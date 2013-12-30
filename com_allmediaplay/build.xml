@@ -31,7 +31,7 @@ C:\\xampp\\htdocs\\joomla_root\\ ; or what ever it is on linux or Mac OS is that
     <property file="P:\PHP\Netbeans-Projekte\allmediaplay\nbproject/project.properties" />
     <property file="${ftp.connections}/${remote.connection}.properties" />
 
-    <property name="src" location="../"/>
+    <property name="src" location="../com_allmediaplay"/>
     <property name="adminsrc" location="../com_allmediaplay/admin"/>
     <property name="mediasrc" location="../com_allmediaplay/media"/>
     <property name="sitesrc" location="../com_allmediaplay/site"/>
