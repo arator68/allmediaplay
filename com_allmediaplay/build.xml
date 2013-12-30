@@ -123,7 +123,7 @@ C:\\xampp\\htdocs\\joomla_root\\ ; or what ever it is on linux or Mac OS is that
     </target>
     <target name="zipup"
             description="zips the archive" >
-        <zip destfile="${build}/${name}.zip">
+        <zip destfile="${build}/com_${name}.zip">
             <zipfileset dir="${src}" excludes="**/.svn/,**/nbproject/**"/>
         </zip>
     </target>
