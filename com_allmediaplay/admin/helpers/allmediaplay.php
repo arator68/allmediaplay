@@ -21,7 +21,7 @@ abstract class AllMediaPlayHelper
 	 */
 	public static function addSubmenu($submenu) 
 	{
-                JSubMenuHelper::addEntry(JText::_('COM_ALLMEDIAPLAY_SUBMENU_PLAYER'), 'index.php?option=com_allmediaplay', $submenu == 'messages');
+                JSubMenuHelper::addEntry(JText::_('COM_ALLMEDIAPLAY_SUBMENU_PLAYER'), 'index.php?option=com_allmediaplay', $submenu == 'allmediaplays');
 		JSubMenuHelper::addEntry(JText::_('COM_ALLMEDIAPLAY_SUBMENU_TAGS'), 'index.php?option=com_allmediaplay&view=tags', $submenu == 'tags');
 		//JSubMenuHelper::addEntry(JText::_('COM_ALLMEDIAPLAY_SUBMENU_CATEGORIES'), 'index.php?option=com_categories&view=categories&extension=com_allmediaplay', $submenu == 'categories');
 		// set some global property

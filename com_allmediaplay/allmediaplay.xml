@@ -35,7 +35,8 @@
 		<!-- Administration Menu Section -->
 		<menu img="../media/com_allmediaplay/images/allmediaplay-16x16.png">COM_ALLMEDIAPLAY_MENU</menu>
                 <submenu>
-                    <menu link="option=com_allmediaplay&amp;view=tags" view="tags" img="../media/com_allmediaplay/images/allmediaplay-16x16.png">AVR_TITLE_MANAGE_PLAYERS</menu>
+                    <menu link="option=com_allmediaplay&amp;view=allmediaplays" view="tags" img="../media/com_allmediaplay/images/allmediaplay-16x16.png">COM_ALLMEDIAPLAY_MANAGE_PLAYERS</menu>
+                    <menu link="option=com_allmediaplay&amp;view=tags" view="tags" img="../media/com_allmediaplay/images/allmediaplay-16x16.png">COM_ALLMEDIAPLAY_MANAGE_TAGS</menu>
                 </submenu>
 		<!-- Administration Main File Copy Section -->
 		<!-- Note the folder attribute: This attribute describes the folder
@@ -48,7 +49,6 @@
 			<filename>controller.php</filename>
                         <filename>config.xml</filename>
 			<filename>access.xml</filename>
-                        <filename>index.php</filename>
                         <!-- Assets files section -->
 			<folder>assets</folder>
                         <!-- SQL files section -->

@@ -46,12 +46,13 @@ class AllMediaPlayController extends JController
         
        // set default view if not set
 		JRequest::setVar('view', JRequest::getCmd('view', 'AllMediaPlays'));
+                AllMediaPlayHelper::addSubmenu(JRequest::getCmd('view', 'allmediaplays'));
 
 		// call parent behavior
 		parent::display($cachable);
 
 		// Set the submenu
-		AllMediaPlayHelper::addSubmenu('messages'); 
+		//AllMediaPlayHelper::addSubmenu('messages'); 
     }
 
 }
