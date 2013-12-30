@@ -41,7 +41,7 @@ C:\\xampp\\htdocs\\joomla_root\\ ; or what ever it is on linux or Mac OS is that
     <property name="sitetest" value="${web.root}components\com_${name}" />
     <property name="admintest" value="${web.root}administrator\components\com_${name}" />
     <property name="mediatest" value="${web.root}media\com_${name}" />
-    <property name="languagetest" value="${web.root}administrator\" />
+    <property name="languagetest" value="${web.root}administrator\language" />
     <property name="manifest" value="${src}\com_${name}.xml" />
     
     <target name="init">
