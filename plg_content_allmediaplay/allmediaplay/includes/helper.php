@@ -1,11 +1,17 @@
 <?php
 /**
- * @version		4.5.0
- * @package		AllVideos (plugin)
- * @author    JoomlaWorks - http://www.joomlaworks.net
- * @copyright	Copyright (c) 2006 - 2013 JoomlaWorks Ltd. All rights reserved.
- * @license		GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
- */
+ * @package RK-Softwareentwicklung AllMediaPlay Content Plugin
+ * @author RK-Softwareentwicklung
+ * @copyright (C) 2013 RK-Softwareentwicklung
+ * @version 1.0.0
+ * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ * 
+ * Inspired by and partially based on:
+ *
+ *   The "AllVideos" Plugin for Joomla - Version 4.5.0
+ *   Authors: JoomlaWorks
+ *   Copyright (c) 2006 JoomlaWorks.gr - http://www.joomlaworks.gr
+ * */
 
 // no direct access
 defined('_JEXEC') or die('Restricted access');
