@@ -19,6 +19,7 @@
     <property name="build" location="../package"/>
     
     <property name="sitetest" value="${web.root}plugin\content\${name}" />
+    <property name="languagetest" value="${web.root}administrator\language" />
     <property name="manifest" value="${src}\plg_content_${name}.xml" />
     
     <target name="init">
@@ -30,6 +31,8 @@
         <echo message="Web Root ${web.root} "/>
         <echo message="Src var: ${src} "/>
         <echo message="SiteSrc var: ${sitesrc} "/>
+        <echo message="LanguageSrc var: ${languagesrc} "/>
+        <echo message="LanguageTest var: ${languagetest} "/>
         <echo message="Admin var: ${adminsrc} "/>
         <echo message="AdminTest var: ${admintest} "/>
         <echo message="SiteTest var: ${sitetest} "/>
@@ -93,6 +96,18 @@
         <echo message="Running build.xml...." />
         <copy todir="${mediatest}">
             <fileset dir="${mediasrc}">
+                <exclude name="**/*.svn/"/>
+                <exclude name="**/nbproject/**"/>
+               
+            </fileset>
+        </copy>
+        
+    </target>
+    
+    <target name="copy_language" description="Copies files to test project.">
+        <echo message="Running build.xml...." />
+        <copy todir="${languagetest}">
+            <fileset dir="${languagesrc}">
                 <exclude name="**/*.svn/"/>
                 <exclude name="**/nbproject/**"/>
                
