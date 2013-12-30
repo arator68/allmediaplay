@@ -53,7 +53,7 @@
 			<!-- models files section -->
 			<folder>models</folder>
 			<!-- views files section -->
-			-<folder>views</folder>
+			<folder>views</folder>
 			<!-- controllers files section -->
 			<folder>controllers</folder>
 			<!-- helpers files section -->
