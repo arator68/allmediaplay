@@ -30,8 +30,8 @@ class plgContentAllMediaPlay extends JPlugin
     var $plg_copyrights_start = "\n\n<!-- AllMediaPlay Plugin starts here-->\n";
     // Our standard trailer
     var $plg_copyrights_end = "\n<!--AllMediaPlay Plugin ends here -->\n\n";
-    var $plg_name = "allmediaplay";
-    var $lwplayer_key="<script type=/"text/javascript/">jwplayer.key=/"ABCDEFGHIJKLMOPQ/";</script>";
+    var $plg_name = "allmediaplay";  
+    var $jwplayerkey="\n<script type=\"text/javascript\">jwplayer.key=\"ndTLvf458hAVNswnPV/hagduqZRp2gSi4DHCzw==\";</script>\n";
 
     ///// Content plugin API interface starts here
 
@@ -214,6 +214,15 @@ class plgContentAllMediaPlay extends JPlugin
         $autoplay = ($params->get('autoplay')) ? $params->get('autoplay') : $pluginParams->get('autoplay', 0);
         /* Performance Parameters */
         $gzipScripts = $pluginParams->get('gzipScripts', 0);
+        $key = $pluginParams->get('jwplayerkey',0);
+        if($key == "")
+        {
+            $this->jwplayerkey="";
+        }
+        else
+        {
+            $this->jwplayerkey="\n<script type=\"text/javascript\">jwplayer.key=\"".$pluginParams->get('jwplayerkey', 0)."\";</script>\n";
+        }
 
         // Variable cleanups for K2
         if (JRequest::getCmd('format') == 'raw')
@@ -560,7 +569,7 @@ class plgContentAllMediaPlay extends JPlugin
                     $getTemplatePath = $getTemplatePath->file;
                     include($getTemplatePath);
                     $dum = ob_get_contents();
-                    $getTemplate = $this->plg_copyrights_start . ob_get_contents() . $this->plg_copyrights_end;
+                    $getTemplate = $this->plg_copyrights_start . $this->jwplayerkey . ob_get_contents() . $this->plg_copyrights_end;
                     ob_end_clean();
 
                     // Output
