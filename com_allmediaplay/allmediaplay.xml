@@ -62,9 +62,9 @@
 			<folder>elements</folder>
 		</files>
 
-		<languages folder="admin">
-			<language tag="de-DE">language/de-DE/de-DE.com_allmediaplay.ini</language>
-			<language tag="de-DE">language/de-DE/de-DE.com_allmediaplay.sys.ini</language>
+		<languages folder="language">
+			<language tag="de-DE">de-DE/de-DE.com_allmediaplay.ini</language>
+			<language tag="de-DE">de-DE/de-DE.com_allmediaplay.sys.ini</language>
 		</languages>
 	</administration>
 
