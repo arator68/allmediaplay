@@ -102,7 +102,7 @@
     </target>
     <target name="zipup"
             description="zips the archive" >
-        <zip destfile="${build}/plg_content_${name}.zip">
+        <zip destfile="${build}/plg_editors-xtd_${name}.zip">
             <zipfileset dir="${src}" excludes="**/.svn/,**/nbproject/**"/>
         </zip>
     </target>
