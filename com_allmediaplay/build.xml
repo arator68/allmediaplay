@@ -48,7 +48,7 @@ C:\\xampp\\htdocs\\joomla_root\\ ; or what ever it is on linux or Mac OS is that
         <echo message="Creating ${build} directory"/>
         <echo message="Name ${name} "/>
         <echo message="Build ${build} "/>
-        <echo message="Web Root ${web.root} "/>
+        <echo message="Web Root ${web.root.com} "/>
         <echo message="Src var: ${src} "/>
         <echo message="SiteSrc var: ${sitesrc} "/>
         <echo message="Admin var: ${adminsrc} "/>
