@@ -35,11 +35,13 @@ C:\\xampp\\htdocs\\joomla_root\\ ; or what ever it is on linux or Mac OS is that
     <property name="adminsrc" location="../com_allmediaplay/admin"/>
     <property name="mediasrc" location="../com_allmediaplay/media"/>
     <property name="sitesrc" location="../com_allmediaplay/site"/>
+    <property name="languagesrc" location="../com_allmediaplay/language"/>
     <property name="build" location="../package"/>
     
     <property name="sitetest" value="${web.root}components\com_${name}" />
     <property name="admintest" value="${web.root}administrator\components\com_${name}" />
     <property name="mediatest" value="${web.root}media\com_${name}" />
+    <property name="languagetest" value="${web.root}administrator\" />
     <property name="manifest" value="${src}\com_${name}.xml" />
     
     <target name="init">
@@ -51,6 +53,7 @@ C:\\xampp\\htdocs\\joomla_root\\ ; or what ever it is on linux or Mac OS is that
         <echo message="Web Root ${web.root.com} "/>
         <echo message="Src var: ${src} "/>
         <echo message="SiteSrc var: ${sitesrc} "/>
+        <echo message="LanguageSrc var: ${languagesrc} "/>
         <echo message="Admin var: ${adminsrc} "/>
         <echo message="AdminTest var: ${admintest} "/>
         <echo message="SiteTest var: ${sitetest} "/>
@@ -114,6 +117,18 @@ C:\\xampp\\htdocs\\joomla_root\\ ; or what ever it is on linux or Mac OS is that
         <echo message="Running build.xml...." />
         <copy todir="${mediatest}">
             <fileset dir="${mediasrc}">
+                <exclude name="**/*.svn/"/>
+                <exclude name="**/nbproject/**"/>
+               
+            </fileset>
+        </copy>
+        
+    </target>
+    
+    <target name="copy_language" description="Copies files to test project.">
+        <echo message="Running build.xml...." />
+        <copy todir="${languagetest}">
+            <fileset dir="${languagesrc}">
                 <exclude name="**/*.svn/"/>
                 <exclude name="**/nbproject/**"/>
                
