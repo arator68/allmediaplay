@@ -32,9 +32,9 @@ C:\\xampp\\htdocs\\joomla_root\\ ; or what ever it is on linux or Mac OS is that
     <property file="${ftp.connections}/${remote.connection}.properties" />
 
     <property name="src" location="../"/>
-    <property name="adminsrc" location="../admin"/>
-    <property name="mediasrc" location="../media"/>
-    <property name="sitesrc" location="../site"/>
+    <property name="adminsrc" location="../com_allmediaplay/admin"/>
+    <property name="mediasrc" location="../com_allmediaplay/media"/>
+    <property name="sitesrc" location="../com_allmediaplay/site"/>
     <property name="build" location="package"/>
     
     <property name="sitetest" value="${web.root}components\com_${name}" />
@@ -46,6 +46,7 @@ C:\\xampp\\htdocs\\joomla_root\\ ; or what ever it is on linux or Mac OS is that
         <tstamp/>
         <mkdir dir="${build}"/>
         <echo message="Creating ${build} directory"/>
+        <echo message="PHP ${php.version} "/>
         <echo message="Name ${name} "/>
         <echo message="Build ${build} "/>
         <echo message="Web Root ${web.root} "/>
