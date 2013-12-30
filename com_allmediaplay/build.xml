@@ -27,7 +27,7 @@ name=dog
 C:\\xampp\\htdocs\\joomla_root\\ ; or what ever it is on linux or Mac OS is thats your flavor
 -->
 <project name="automated-build-tasks" default="init" basedir=".">
-    <property file="private/private.properties" />
+    <property file="P:\PHP\Netbeans-Projekte\allmediaplay\nbproject/private/private.properties" />
     <property file="project.properties" />
     <property file="${ftp.connections}/${remote.connection}.properties" />
 
