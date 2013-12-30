@@ -32,10 +32,8 @@ C:\\xampp\\htdocs\\joomla_root\\ ; or what ever it is on linux or Mac OS is that
     <property file="${ftp.connections}/${remote.connection}.properties" />
 
     <property name="src" location="../plg_content_allmediaplay"/>
-    <property name="adminsrc" location="../com_allmediaplay/admin"/>
-    <property name="mediasrc" location="../com_allmediaplay/media"/>
-    <property name="sitesrc" location="../com_allmediaplay/site"/>
-    <property name="languagesrc" location="../com_allmediaplay/site"/>
+    <property name="pluginsrc" location="../plg_content_allmediaplay"/>
+    <property name="languagesrc" location="../plg_content_allmediaplay/language"/>
     <property name="build" location="../package"/>
     
     <property name="sitetest" value="${web.root}components\com_${name}" />
