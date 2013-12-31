@@ -23,6 +23,7 @@ abstract class AllMediaPlayHelper
 	{
                 JSubMenuHelper::addEntry(JText::_('COM_ALLMEDIAPLAY_SUBMENU_PLAYER'), 'index.php?option=com_allmediaplay', $submenu == 'allmediaplays');
 		JSubMenuHelper::addEntry(JText::_('COM_ALLMEDIAPLAY_SUBMENU_TAGS'), 'index.php?option=com_allmediaplay&view=tags', $submenu == 'tags');
+                JSubMenuHelper::addEntry(JText::_('COM_ALLMEDIAPLAY_SUBMENU_PLAYLIST'), 'index.php?option=com_allmediaplay&view=playlists', $submenu == 'playlists');
 		//JSubMenuHelper::addEntry(JText::_('COM_ALLMEDIAPLAY_SUBMENU_CATEGORIES'), 'index.php?option=com_categories&view=categories&extension=com_allmediaplay', $submenu == 'categories');
 		// set some global property
 		$document = JFactory::getDocument();

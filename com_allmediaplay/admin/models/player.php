@@ -16,7 +16,7 @@ jimport('joomla.application.component.modeladmin');
  */
 class AllMediaPlayModelPlayer extends JModelAdmin
 {
-
+   
     protected function allowEdit($data = array(), $key = 'id')
     {
         // Check specific edit permission then general edit permission.
@@ -62,6 +62,23 @@ class AllMediaPlayModelPlayer extends JModelAdmin
     public function getTable($type = 'Player', $prefix = 'AllMediaPlayTable', $config = array())
     {
         return JTable::getInstance($type, $prefix, $config);
+    }
+    
+    public function delete($cids)
+    {
+        $cids = JRequest::getVar('cid', array(0),'post','array');
+        $table = $this->getTable();
+        if (count($cids))
+        {
+            foreach ($cids as $cid)
+            {
+                if (!$table->delete($cid))
+                {
+                    $this->setError($table->getErrorMsg());
+                    return false;
+                }
+            }
+        }
     }
 
 }

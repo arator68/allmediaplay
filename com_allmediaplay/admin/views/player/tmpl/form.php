@@ -109,6 +109,6 @@ function submitbutton(pressbutton) {
 <input type="hidden" name="id" value="<?php echo $this->player->id;?>" />
 <input type="hidden" name="cid[]" value="<?php echo $this->player->id; ?>" />
 <input type="hidden" name="task" value="" />
-<input type="hidden" name="controller" value="players" />
+<input type="hidden" name="controller" value="player" />
 <?php echo JHTML::_('form.token'); ?>
 </form>

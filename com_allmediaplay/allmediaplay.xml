@@ -37,6 +37,7 @@
                 <submenu>
                     <menu link="option=com_allmediaplay&amp;view=allmediaplays" view="tags" img="../media/com_allmediaplay/images/allmediaplay-16x16.png">COM_ALLMEDIAPLAY_MANAGE_PLAYERS</menu>
                     <menu link="option=com_allmediaplay&amp;view=tags" view="tags" img="../media/com_allmediaplay/images/allmediaplay-16x16.png">COM_ALLMEDIAPLAY_MANAGE_TAGS</menu>
+                    <menu link="option=com_allmediaplay&amp;view=playlists" view="tags" img="../media/com_allmediaplay/images/allmediaplay-16x16.png">COM_ALLMEDIAPLAY_MANAGE_PLAYLISTS</menu>
                 </submenu>
 		<!-- Administration Main File Copy Section -->
 		<!-- Note the folder attribute: This attribute describes the folder

@@ -18,6 +18,12 @@ jimport('joomla.application.component.controllerform');
  */
 class AllMediaPlayControllerPlayer extends JControllerForm
 {
+    public function getModel($name = 'player', $prefix = 'AllMediaPlayModel')
+    {
+        $model = parent::getModel($name, $prefix, array('ignore_request' => true));
+        return $model;
+    }
+    
     var $_mylink = 'index.php?option=com_allmediaplay&view=allmediaplays';
     
     public function cancel($key = NULL)
@@ -36,6 +42,15 @@ class AllMediaPlayControllerPlayer extends JControllerForm
     
     public function apply()
     {
+        JSession::checkToken() or jexit(JText::_('JINVALID_TOKEN'));
+        $msg = JText::_('COM_ALLMEDIAPLAY_MESSAGE_DELETE');
+        $this->setRedirect($this->_mylink, $msg);
+    }
+    
+    public function delete()
+    {
+        $model = $this->getModel();
+        $model->delete();
         $msg = JText::_('COM_ALLMEDIAPLAY_MESSAGE_CANCEL');
         $this->setRedirect($this->_mylink, $msg);
     }

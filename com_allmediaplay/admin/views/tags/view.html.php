@@ -66,7 +66,7 @@ class AllMediaPlayViewTags extends JView
 		}
 		if ($canDo->get('core.delete')) 
 		{
-			JToolBarHelper::deleteList('', 'tag.delete', 'JTOOLBAR_DELETE');
+			JToolBarHelper::deleteList('', 'tags.delete', 'JTOOLBAR_DELETE');
 		}
 		if ($canDo->get('core.admin')) 
 		{

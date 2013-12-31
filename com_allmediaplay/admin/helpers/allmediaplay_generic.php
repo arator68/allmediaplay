@@ -52,9 +52,11 @@ class AllMediaPlayGenericHelper {
         $mdir = JPATH_ROOT.DS.$mparams->get('image_path', 'images'.DS.'stories');
         $plg =& JPluginHelper::getPlugin('content', 'allmediaplay');
         $pparams = new JParameter($plg->params);
-        $vdir = $pparams->get('vdir', 'videos');
-        if (JString::strpos($vdir, '/') === 0) {
-            $vdir = JPATH_ROOT.$vdir;
+        $vdir = $pparams->get('vfolder', 'videos');
+        $pos = JString::strpos($vdir, '/');
+        if (JString::strpos($vdir, '/') == 0) {
+            //$vdir = JPATH_ROOT.'/'.$vdir;
+            $vdir = $mdir.DS.$vdir;
         } else {
             $vdir = $mdir.DS.$vdir;
         }
