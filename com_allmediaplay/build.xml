@@ -35,14 +35,14 @@ C:\\xampp\\htdocs\\joomla_root\\ ; or what ever it is on linux or Mac OS is that
     <property name="adminsrc" location="../com_allmediaplay/admin"/>
     <property name="mediasrc" location="../com_allmediaplay/media"/>
     <property name="sitesrc" location="../com_allmediaplay/site"/>
-    <property name="languagesrc" location="../com_allmediaplay/language"/>
+    <property name="languagesrc" location="../com_allmediaplay/language/de-DE"/>
     <property name="build" location="../package"/>
     
     <property name="sitetest" value="${web.root_prj}components\com_${name}" />
     <property name="admintest" value="${web.root_prj}administrator\components\com_${name}" />
     <property name="mediatest" value="${web.root_prj}media\com_${name}" />
-    <property name="languagetest" value="${web.root_prj}administrator\language" />
-    <property name="manifest" value="${src}\com_${name}.xml" />
+    <property name="languagetest" value="${web.root_prj}administrator\language\de-DE" />
+    <property name="manifest" value="${src}\${name}.xml" />
     
     <target name="init">
         <tstamp/>
@@ -51,11 +51,12 @@ C:\\xampp\\htdocs\\joomla_root\\ ; or what ever it is on linux or Mac OS is that
         <echo message="Name ${name} "/>
         <echo message="Build ${build} "/>
         <echo message="Web Root ${web.root.com} "/>
-        <echo message="Src var: ${src} "/>
-        <echo message="SiteSrc var: ${sitesrc} "/>
+        <echo message="Src var: ${src} "/>        
         <echo message="LanguageSrc var: ${languagesrc} "/>
+        <echo message="LanguageTest var: ${languagetest} "/>
         <echo message="Admin var: ${adminsrc} "/>
         <echo message="AdminTest var: ${admintest} "/>
+        <echo message="SiteSrc var: ${sitesrc} "/>
         <echo message="SiteTest var: ${sitetest} "/>
         <echo message="Manifest: ${manifest} "/>
     </target>
@@ -104,13 +105,12 @@ C:\\xampp\\htdocs\\joomla_root\\ ; or what ever it is on linux or Mac OS is that
     <target name="copy_admin" description="Copies files to test project.">
         <echo message="Running build.xml...." />
         <copy todir="${admintest}">
-            <fileset dir="${adminsrc}">
-                <exclude name="**/*.svn/"/>
-                <exclude name="**/nbproject/**"/>
-               
+            <fileset dir="${adminsrc}">                
+                <!--<exclude name="**/*.svn/"/>
+                <exclude name="**/nbproject/**"/>              -->
             </fileset>
         </copy>
-        <copy file="${manifest}" todir="${admintest}"/>
+        <!--<copy file="${manifest}" todir="${admintest}"/>-->
         
     </target>
     <target name="copy_media" description="Copies files to test project.">
