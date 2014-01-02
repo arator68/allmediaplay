@@ -15,7 +15,7 @@ JHtml::_('behavior.formvalidation');
 $params = $this->form->getFieldsets('params');
 ?>
 <form action="<?php echo JRoute::_('index.php?option=com_allmediaplay&layout=edit&id=' . (int) $this->item->id); ?>" method="post" name="adminForm" id="player-form" class="form-validate">
-    <div class="width-60 fltlft">
+    <div class="width-100 fltlft">
         <fieldset class="adminform">
             <legend><?php echo JText::_('COM_ALLMEDIAPLAY_FORM_PLAYER_DETAILS'); ?></legend>
             <ul class="adminformlist">
@@ -26,7 +26,7 @@ $params = $this->form->getFieldsets('params');
             </ul>
     </div>
 
-    <div class="width-40 fltrt">
+<!--    <div class="width-40 fltrt">
         <?php echo JHtml::_('sliders.start', 'helloworld-slider'); ?>
 
         <?php foreach ($params as $name => $fieldset): ?>
@@ -44,7 +44,7 @@ $params = $this->form->getFieldsets('params');
         <?php endforeach; ?>
 
 <?php echo JHtml::_('sliders.end'); ?>
-    </div>
+    </div>-->
 
     <div>
         <input type="hidden" name="task" value="player.edit" />

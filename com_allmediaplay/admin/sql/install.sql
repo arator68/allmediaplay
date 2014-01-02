@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 30. Dez 2013 um 15:49
+-- Generation Time: 02. Jan 2014 um 16:33
 -- Server Version: 5.6.15-log
 -- PHP Version: 5.4.14
 
@@ -25,6 +25,7 @@ SET time_zone = "+00:00";
 -- Tabellenstruktur für Tabelle `#__allmediaplay_playerlist`
 --
 
+DROP TABLE IF EXISTS `#__allmediaplay_playerlist`;
 CREATE TABLE IF NOT EXISTS `#__allmediaplay_playerlist` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `version` varchar(8) NOT NULL,
@@ -32,25 +33,24 @@ CREATE TABLE IF NOT EXISTS `#__allmediaplay_playerlist` (
   `code` mediumtext NOT NULL,
   `description` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=55 ;
+) ENGINE=MyISAM  AUTO_INCREMENT=54 ;
 
 --
 -- Daten für Tabelle `#__allmediaplay_playerlist`
 --
 
 INSERT INTO `#__allmediaplay_playerlist` (`id`, `version`, `location`, `code`, `description`) VALUES(1, '6.7', 'local', '<div id="{SOURCEID}" style="width:{WIDTH}px;height:{HEIGHT}px;" title="AllMediaPlay Player"></div>\r\n<script type="text/javascript">\r\n	jwplayer(''{SOURCEID}'').setup({\r\n		''file'': ''{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}'',\r\n		''image'': ''{PLAYER_POSTER_FRAME}'',\r\n		''height'': ''{HEIGHT}'',\r\n		''width'': ''{WIDTH}'',\r\n		''modes'': [\r\n			{ ''type'': ''html5'' },\r\n		  { ''type'': ''flash'', src: ''{PLUGIN_PATH}/includes/js/mediaplayer/jwplayer.flash.swf'' },\r\n		  { ''type'': ''download'' }\r\n		],\r\n		''autostart'': ''{PLAYER_AUTOPLAY}'',\r\n		''backcolor'': ''{PLAYER_BACKGROUND}'',\r\n		''plugins'': {\r\n			''viral-2'': {\r\n				''onpause'': ''false'',\r\n				''oncomplete'': ''true''\r\n			}\r\n		},\r\n		''controlbar'': ''{PLAYER_CONTROLBAR}'',\r\n		''skin'': ''{PLUGIN_PATH}/includes/js/mediaplayer/skins/{PLAYER_SKIN}/{PLAYER_SKIN}.xml''\r\n	});\r\n</script>\r\n', 'JW Player Video Local');
-INSERT INTO `#__allmediaplay_playerlist` (`id`, `version`, `location`, `code`, `description`) VALUES(2, '6.7', 'remote', '<div id="{SOURCEID}" style="width:{WIDTH}px;height:{HEIGHT}px;" title="AllMediaPlay Player"></div>\r\n<script type="text/javascript">\r\n	jwplayer(''avID_{SOURCEID}'').setup({\r\n		''file'': ''{SOURCE}'',\r\n		''height'': ''{HEIGHT}'',\r\n		''width'': ''{WIDTH}'',\r\n		''modes'': [\r\n			{ type: ''html5'' },\r\n		  { type: ''flash'', src: ''{PLUGIN_PATH}/includes/js/mediaplayer/player.swf'' },\r\n		  { type: ''download'' }\r\n		],\r\n		''autostart'': ''{PLAYER_AUTOPLAY}'',\r\n		''backcolor'': ''{PLAYER_BACKGROUND}'',\r\n		''plugins'': {\r\n			''viral-2'': {\r\n				''onpause'': ''false'',\r\n				''oncomplete'': ''true''\r\n			}\r\n		},\r\n		''controlbar'': ''{PLAYER_CONTROLBAR}'',\r\n		''skin'': ''{PLUGIN_PATH}/includes/js/mediaplayer/skins/{PLAYER_SKIN}/{PLAYER_SKIN}.zip''\r\n	});\r\n</script>', 'JW Player Video Remote');
+INSERT INTO `#__allmediaplay_playerlist` (`id`, `version`, `location`, `code`, `description`) VALUES(2, '6.7', 'remote', '<div id="{SOURCEID}" style="width:{WIDTH}px;height:{HEIGHT}px;" title="AllMediaPlay Player"></div>\r\n<script type="text/javascript">\r\n	jwplayer(''{SOURCEID}'').setup({\r\n		''file'': ''{SOURCE}'',\r\n		''height'': ''{HEIGHT}'',\r\n		''width'': ''{WIDTH}'',\r\n		''modes'': [\r\n			{ type: ''html5'' },\r\n		  { type: ''flash'', src: ''{PLUGIN_PATH}/includes/js/mediaplayer/player.swf'' },\r\n		  { type: ''download'' }\r\n		],\r\n		''autostart'': ''{PLAYER_AUTOPLAY}'',\r\n		''backcolor'': ''{PLAYER_BACKGROUND}'',\r\n		''plugins'': {\r\n			''viral-2'': {\r\n				''onpause'': ''false'',\r\n				''oncomplete'': ''true''\r\n			}\r\n		},\r\n		''controlbar'': ''{PLAYER_CONTROLBAR}'',\r\n		''skin'': ''{PLUGIN_PATH}/includes/js/mediaplayer/skins/{PLAYER_SKIN}/{PLAYER_SKIN}.zip''\r\n	});\r\n</script>', 'JW Player Video Remote');
 INSERT INTO `#__allmediaplay_playerlist` (`id`, `version`, `location`, `code`, `description`) VALUES(3, '6.7', 'local', '<div id="{SOURCEID}" style="width:{WIDTH}px;height:{HEIGHT}px;" title="AllMediaPlay Player"></div>\r\n<script type=\\"text/javascript\\">\r\n	jwplayer(''{SOURCEID}'').setup({\r\n		''file'': ''{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}'',\r\n		''image'': ''{PLAYER_POSTER_FRAME}'',\r\n		''height'': ''{HEIGHT}'',\r\n		''width'': ''{WIDTH}'',\r\n		''modes'': [\r\n		  { ''type'': ''flash'', src: ''{PLUGIN_PATH}/includes/js/mediaplayer/player.swf'' },\r\n		  { ''type'': ''html5'' },\r\n		  { ''type'': ''download'' }\r\n		],\r\n		''autostart'': ''{PLAYER_AUTOPLAY}'',\r\n    ''backcolor'': ''{PLAYER_ABACKGROUND}'',\r\n    ''frontcolor'': ''{PLAYER_AFRONTCOLOR}'',\r\n    ''lightcolor'': ''{PLAYER_ALIGHTCOLOR}'',\r\n    ''controlbar'': ''bottom''\r\n	});\r\n</script>', 'JW Player Audio Local');
-INSERT INTO `#__allmediaplay_playerlist` (`id`, `version`, `location`, `code`, `description`) VALUES(4, '6.7', 'remote', '<div id="{SOURCEID}" style="width:{WIDTH}px;height:{HEIGHT}px;" title="AllMediaPlay Player"></div>\r\n<script type="text/javascript">\r\n	jwplayer(''avID_{SOURCEID}'').setup({\r\n		''file'': ''{SOURCE}'',\r\n		''height'': ''{HEIGHT}'',\r\n		''width'': ''{WIDTH}'',\r\n		''modes'': [\r\n		  { type: ''flash'', src: ''{PLUGIN_PATH}/includes/js/mediaplayer/player.swf'' },\r\n		  { type: ''html5'' },\r\n		  { type: ''download'' }\r\n		],\r\n		''autostart'': ''{PLAYER_AUTOPLAY}'',\r\n    ''backcolor'': ''{PLAYER_ABACKGROUND}'',\r\n    ''frontcolor'': ''{PLAYER_AFRONTCOLOR}'',\r\n    ''lightcolor'': ''{PLAYER_ALIGHTCOLOR}'',\r\n    ''controlbar'': ''bottom''\r\n	});\r\n</script>', 'JW Player Audio Remote');
-INSERT INTO `#__allmediaplay_playerlist` (`id`, `version`, `location`, `code`, `description`) VALUES(5, '', 'local', '<script type="text/javascript">\r\n	QT_WriteOBJECT_XHTML(''{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}'', ''{WIDTH}'', ''{HEIGHT}'', '''', ''autoplay'', ''{PLAYER_AUTOPLAY}'', ''bgcolor'', ''{PLAYER_BACKGROUNDQT}'', ''scale'', ''aspect'');\r\n</script>\r\n', 'Quicktime Video Local');
+INSERT INTO `#__allmediaplay_playerlist` (`id`, `version`, `location`, `code`, `description`) VALUES(4, '6.7', 'remote', '<div id="{SOURCEID}" style="width:{WIDTH}px;height:{HEIGHT}px;" title="AllMediaPlay Player"></div>\r\n<script type="text/javascript">\r\n	jwplayer(''{SOURCEID}'').setup({\r\n		''file'': ''{SOURCE}.{FILE_EXT}'',\r\n		''height'': ''{HEIGHT}'',\r\n		''width'': ''{WIDTH}'',\r\n		''modes'': [\r\n		  { type: ''flash'', src: ''{PLUGIN_PATH}/includes/js/mediaplayer/player.swf'' },\r\n		  { type: ''html5'' },\r\n		  { type: ''download'' }\r\n		],\r\n		''autostart'': ''{PLAYER_AUTOPLAY}'',\r\n    ''backcolor'': ''{PLAYER_ABACKGROUND}'',\r\n    ''frontcolor'': ''{PLAYER_AFRONTCOLOR}'',\r\n    ''lightcolor'': ''{PLAYER_ALIGHTCOLOR}'',\r\n    ''controlbar'': ''bottom''\r\n	});\r\n</script>', 'JW Player Audio Remote');
 INSERT INTO `#__allmediaplay_playerlist` (`id`, `version`, `location`, `code`, `description`) VALUES(6, '', 'remote', '<script type=\\"text/javascript\\">\r\n	QT_WriteOBJECT_XHTML(''{SOURCE}'', ''{WIDTH}'', ''{HEIGHT}'', '''', ''autoplay'', ''{PLAYER_AUTOPLAY}'', ''bgcolor'', ''{PLAYER_BACKGROUNDQT}'', ''scale'', ''aspect'');\r\n</script>', 'Quicktime Video Remote');
 INSERT INTO `#__allmediaplay_playerlist` (`id`, `version`, `location`, `code`, `description`) VALUES(7, '', 'local', '<div id=\\"allmediaplayID_{SOURCEID}\\" style=\\"width:{WIDTH}px;height:{HEIGHT}px;\\" title=\\"JoomlaWorks AllVideos Player\\"></div>\r\n<script type=\\"text/javascript\\">\r\n	var cnt = document.getElementById(''avID_{SOURCEID}'');\r\n	var src = ''{PLUGIN_PATH}/includes/js/wmvplayer/wmvplayer.xaml'';\r\n	var cfg = {\r\n		''file'': ''{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}'',\r\n		''image'': ''{PLAYER_POSTER_FRAME}'',\r\n		''width'': ''{WIDTH}'',\r\n		''height'': ''{HEIGHT}'',\r\n		''autostart'': ''{PLAYER_AUTOPLAY}''\r\n	};\r\n	var ply = new jeroenwijering.Player(cnt,src,cfg);\r\n</script>', 'Windows Media Local');
 INSERT INTO `#__allmediaplay_playerlist` (`id`, `version`, `location`, `code`, `description`) VALUES(8, '', 'remote', '<div id=\\"allmediaplayID_{SOURCEID}\\" style=\\"width:{WIDTH}px;height:{HEIGHT}px;\\" title=\\"JoomlaWorks AllVideos Player\\"></div>\r\n<script type=\\"text/javascript\\">\r\n	var cnt = document.getElementById(''avID_{SOURCEID}'');\r\n	var src = ''{PLUGIN_PATH}/includes/js/wmvplayer/wmvplayer.xaml'';\r\n	var cfg = {\r\n		''file'': ''{SOURCE}'',\r\n		''width'': ''{WIDTH}'',\r\n		''height'': ''{HEIGHT}'',\r\n		''autostart'': ''{PLAYER_AUTOPLAY}''\r\n	};\r\n	var ply = new jeroenwijering.Player(cnt,src,cfg);\r\n</script>', 'Windows Media Remote');
 INSERT INTO `#__allmediaplay_playerlist` (`id`, `version`, `location`, `code`, `description`) VALUES(9, '', 'local', '<object classid="clsid:67DABFBF-D0AB-41fa-9C46-CC0F21721616" width={WIDTH} height={HEIGHT} codebase="http://go.divx.com/plugin/DivXBrowserPlugin.cab">\r\n  <param name="custommode" value="none" />\r\n  <param name="previewImage" value="" />\r\n  <param name="autoPlay" value="false" />\r\n  <param name="bufferingMode" value="auto">  \r\n  <param name="src" value="{SITEURL_ABS}/{FOLDER}/{SOURCE}.{FILE_EXT}" />\r\n<embed type="video/divx" src="{SITEURL_ABS}/{FOLDER}/{SOURCE}.{FILE_EXT}" custommode="none" width={WIDTH} height={HEIGHT} bufferingMode="auto" autoPlay="false" previewImage="" pluginspage="http://go.divx.com/plugin/download/">\r\n</embed>\r\n</object>\r\n<!-- leaving the code below will help search index your video -->\r\n<!--<br />\r\nNo video? Get the DivX Web Player for <a style="text-decoration: underline;" href="http://download.divx.com/player/DivXWebPlayerInstaller.exe">Windows</a> or <a style="text-decoration: underline;" href="http://download.divx.com/player/DivXWebPlayer.dmg">Mac</a>-->', 'DivX Local');
-INSERT INTO `#__allmediaplay_playerlist` (`id`, `version`, `location`, `code`, `description`) VALUES(10, '', 'remote', '<object classid="clsid:67DABFBF-D0AB-41fa-9C46-CC0F21721616" width={WIDTH} height={HEIGHT} codebase="http://go.divx.com/plugin/DivXBrowserPlugin.cab">\r\n  <param name="custommode" value="none" />\r\n  <param name="previewImage" value="" />\r\n  <param name="autoPlay" value="false" />\r\n  <param name="bufferingMode" value="auto">  \r\n  <param name="src" value="{SITEURL_ABS}/{FOLDER}/{SOURCE}.{FILE_EXT}" />\r\n<embed type="video/divx" src="{SITEURL_ABS}/{FOLDER}/{SOURCE}.{FILE_EXT}" custommode="none" width={WIDTH} height={HEIGHT} bufferingMode="auto" autoPlay="false" previewImage="" pluginspage="http://go.divx.com/plugin/download/">\r\n</embed>\r\n</object>\r\n<!-- leaving the code below will help search index your video -->\r\n<!--<br />\r\nNo video? Get the DivX Web Player for <a style="text-decoration: underline;" href="http://download.divx.com/player/DivXWebPlayerInstaller.exe">Windows</a> or <a style="text-decoration: underline;" href="http://download.divx.com/player/DivXWebPlayer.dmg">Mac</a>-->', 'DivX Remote');
+INSERT INTO `#__allmediaplay_playerlist` (`id`, `version`, `location`, `code`, `description`) VALUES(10, '', 'remote', '<object classid="clsid:67DABFBF-D0AB-41fa-9C46-CC0F21721616"\r\nwidth={WIDTH} height={HEIGHT}\r\ncodebase="http://go.divx.com/plugin/DivXBrowserPlugin.cab">\r\n  <param name="custommode" value="none" />\r\n  <param name="previewImage" value="" />\r\n  <param name="autoPlay" value="{PLAYER_AUTOPLAY}" />\r\n  <param name="bufferingMode" value="auto">  \r\n  <param name="src" value="{SOURCE}.{FILE_EXT}" />\r\n<embed type="video/divx" \r\nsrc="{SOURCE}.{FILE_EXT}" \r\ncustommode="none" \r\nwidth={WIDTH} \r\nheight={HEIGHT} \r\nbufferingMode="auto" \r\nautoPlay="{PLAYER_AUTOPLAY}" \r\npreviewImage="" \r\npluginspage="http://go.divx.com/plugin/download/">\r\n</embed>\r\n</object>\r\n<!-- leaving the code below will help search index your video -->\r\n<!--<br />\r\nNo video? Get the DivX Web Player for <a style="text-decoration: underline;" href="http://download.divx.com/player/DivXWebPlayerInstaller.exe">Windows</a> or <a style="text-decoration: underline;" href="http://download.divx.com/player/DivXWebPlayer.dmg">Mac</a>-->', 'DivX Remote');
 INSERT INTO `#__allmediaplay_playerlist` (`id`, `version`, `location`, `code`, `description`) VALUES(11, '', 'local', '<object type=\\"application/x-shockwave-flash\\" style=\\"width:{WIDTH}px;height:{HEIGHT}px;\\" data=\\"{SITEURL}/{FOLDER}/{SOURCE}.swf\\">\r\n	<param name=\\"movie\\" value=\\"{SITEURL}/{FOLDER}/{SOURCE}.swf\\" />\r\n	<param name=\\"quality\\" value=\\"high\\" />\r\n	<param name=\\"wmode\\" value=\\"{PLAYER_TRANSPARENCY}\\" />\r\n	<param name=\\"bgcolor\\" value=\\"{PLAYER_BACKGROUND}\\" />\r\n	<param name=\\"autoplay\\" value=\\"{PLAYER_AUTOPLAY}\\" />\r\n</object>', 'SWF Local');
 INSERT INTO `#__allmediaplay_playerlist` (`id`, `version`, `location`, `code`, `description`) VALUES(12, '', 'remote', '<object type=\\"application/x-shockwave-flash\\" style=\\"width:{WIDTH}px;height:{HEIGHT}px;\\" data=\\"{SOURCE}\\">\r\n	<param name=\\"movie\\" value=\\"{SOURCE}\\" />\r\n	<param name=\\"quality\\" value=\\"high\\" />\r\n	<param name=\\"wmode\\" value=\\"{PLAYER_TRANSPARENCY}\\" />\r\n	<param name=\\"bgcolor\\" value=\\"{PLAYER_BACKGROUND}\\" />\r\n	<param name=\\"autoplay\\" value=\\"{PLAYER_AUTOPLAY}\\" />\r\n</object>', 'SWF Remote');
-INSERT INTO `#__allmediaplay_playerlist` (`id`, `version`, `location`, `code`, `description`) VALUES(13, '', 'remote', '<iframe src="http://www.youtube.com/embed/{SOURCE}" width="{WIDTH}" height="{HEIGHT\\" frameborder="0" allowfullscreen title="AllMediaPlay Player"></iframe>', 'Youtube');
+INSERT INTO `#__allmediaplay_playerlist` (`id`, `version`, `location`, `code`, `description`) VALUES(13, '', 'remote', '<iframe src="http://www.youtube.com/embed/{SOURCE}" width="{WIDTH}" height="{HEIGHT}" frameborder="0" allowfullscreen title="AllMediaPlay Player"></iframe>', 'Youtube');
 INSERT INTO `#__allmediaplay_playerlist` (`id`, `version`, `location`, `code`, `description`) VALUES(14, '', 'remote', '<iframe src=\\"http://player.vimeo.com/video/{SOURCE}\\" width=\\"{WIDTH}\\" height=\\"{HEIGHT}\\" frameborder=\\"0\\" title=\\"AllMediaPlay Player\\"></iframe>', 'Vimeo');
 INSERT INTO `#__allmediaplay_playerlist` (`id`, `version`, `location`, `code`, `description`) VALUES(15, '', 'remote', '<iframe src=\\"http://www.dailymotion.com/embed/video/{SOURCE}\\" width=\\"{WIDTH}\\" height=\\"{HEIGHT}\\" frameborder=\\"0\\" title=\\"AllMediaPlay Player\\"></iframe>', 'DailyMotion');
 INSERT INTO `#__allmediaplay_playerlist` (`id`, `version`, `location`, `code`, `description`) VALUES(16, '', 'remote', '<script type=\\"text/javascript\\">\r\n	allmediaplay.ready(function(){\r\n		allmediaplay.embed({\r\n			''url'': ''http://blip.tv/oembed/?callback=bliptv{SOURCEID}&width={WIDTH}&height={HEIGHT}&url={SOURCE}'',\r\n			''callback'': ''bliptv{SOURCEID}'',\r\n			''playerID'': ''avID_{SOURCEID}''\r\n		});\r\n	});\r\n</script>\r\n<div id=\\"allmediaplayID_{SOURCEID}\\" title=\\"AllMediaPlay Player\\">&nbsp;</div>', 'Blip TV');
@@ -98,64 +98,68 @@ INSERT INTO `#__allmediaplay_playerlist` (`id`, `version`, `location`, `code`, `
 -- Tabellenstruktur für Tabelle `#__allmediaplay_taglist`
 --
 
+DROP TABLE IF EXISTS `#__allmediaplay_taglist`;
 CREATE TABLE IF NOT EXISTS `#__allmediaplay_taglist` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `player_id` int(11) NOT NULL,
   `plist` int(1) NOT NULL,
   `name` varchar(30) NOT NULL,
   `description` varchar(255) NOT NULL,
+  `ext` varchar(5) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=46 ;
+) ENGINE=MyISAM  AUTO_INCREMENT=58 ;
 
 --
 -- Daten für Tabelle `#__allmediaplay_taglist`
 --
 
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(1, 1, 1, 'flv', 'FLV');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(2, 2, 1, 'flvremote', 'FLV Remote');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(3, 1, 1, 'mp4', 'MP4');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(4, 2, 1, 'mp4remote', 'MP4 Remote');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(5, 1, 0, 'ogv', 'OGV');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(6, 2, 0, 'ogvremote', 'OGV Remote');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(7, 1, 0, 'webm', 'WEBM');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(8, 2, 0, 'webmremote', 'WEBM Remote');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(9, 1, 0, 'f4v', 'F4V');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(10, 2, 0, 'f4vremote', 'F4V Remote');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(11, 1, 0, 'm4v', 'M4V');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(12, 2, 0, 'm4vremote', 'M4V Remote');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(13, 1, 0, '3gp', '3GP');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(14, 2, 0, '3gpremote', '3GP Remote');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(15, 1, 0, '3g2', '3G2');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(16, 2, 0, '3g2remote', '3G2 Remote');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(17, 3, 0, 'mp3', 'MP3');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(18, 4, 0, 'mp3remote', 'MP3 Remote');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(19, 3, 0, 'aac', 'AAC');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(20, 4, 0, 'aacremote', 'AAC Remote');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(21, 3, 0, 'm4a', 'M4A');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(22, 4, 0, 'm4aremote', 'M4A Remote');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(23, 3, 0, 'ogg', 'OGG');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(24, 4, 0, 'oggremote', 'OGG Remote');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(25, 5, 0, 'mov', 'MOV');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(26, 6, 0, 'movremote', 'MOV Remote');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(27, 5, 0, 'mpeg', 'MPEG');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(28, 6, 0, 'mpegremote', 'MPEG Remote');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(29, 5, 0, 'mpg', 'MPG');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(30, 6, 0, 'mpgremote', 'MPG Remote');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(31, 9, 0, 'avi', 'AVI');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(32, 6, 0, 'aviremote', 'AVI Remote');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(33, 7, 0, 'wmv', 'WMV');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(34, 8, 0, 'wmvremote', 'WMV Remote');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(35, 7, 0, 'wma', 'WMA');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(36, 8, 0, 'wmaremote', 'WMA Remote');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(37, 9, 0, 'divx', 'DIVX');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(38, 10, 0, 'divxremote', 'DIVX Remote');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(39, 11, 0, 'swf', 'SWF');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(40, 12, 0, 'swfremote', 'SWF Remote');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(41, 13, 0, 'youtube', 'Youtube');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(42, 14, 0, 'vimeo', 'Vimeo');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(43, 15, 0, 'dailymotion', 'DailyMotion');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(44, 16, 0, 'blib', 'Blip TV');
-INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`) VALUES(45, 17, 0, '123video', '123Video');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(1, 1, 1, 'flv', 'FLV', 'flv');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(2, 2, 1, 'flvremote', 'FLV Remote', 'flv');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(3, 1, 1, 'mp4', 'MP4', 'mp4');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(4, 2, 1, 'mp4remote', 'MP4 Remote', 'mp4');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(5, 1, 0, 'ogv', 'OGV', 'ogv');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(6, 2, 0, 'ogvremote', 'OGV Remote', 'ogv');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(7, 1, 0, 'webm', 'WEBM', 'webm');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(8, 2, 0, 'webmremote', 'WEBM Remote', 'webm');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(9, 1, 0, 'f4v', 'F4V', 'f4v');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(10, 2, 0, 'f4vremote', 'F4V Remote', 'f4v');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(11, 1, 0, 'm4v', 'M4V', 'm4v');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(12, 2, 0, 'm4vremote', 'M4V Remote', 'm4v');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(13, 1, 0, '3gp', '3GP', '3gp');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(14, 2, 0, '3gpremote', '3GP Remote', '3gp');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(15, 1, 0, '3g2', '3G2', '3g2');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(16, 2, 0, '3g2remote', '3G2 Remote', '3g2');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(17, 3, 0, 'mp3', 'MP3', 'mp3');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(18, 4, 0, 'mp3remote', 'MP3 Remote', 'mp3');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(19, 3, 0, 'aac', 'AAC', 'aac');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(20, 4, 0, 'aacremote', 'AAC Remote', 'aac');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(21, 3, 0, 'm4a', 'M4A', 'm4a');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(22, 4, 0, 'm4aremote', 'M4A Remote', 'm4a');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(23, 3, 0, 'ogg', 'OGG', 'ogg');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(24, 4, 0, 'oggremote', 'OGG Remote', 'ogg');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(25, 1, 0, 'mov', 'MOV', 'mov');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(26, 6, 0, 'movremote', 'MOV Remote', 'mov');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(27, 1, 0, 'mpeg', 'MPEG', 'mpeg');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(28, 6, 0, 'mpegremote', 'MPEG Remote', 'mpeg');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(29, 1, 0, 'mpg', 'MPG', 'mpg');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(30, 6, 0, 'mpgremote', 'MPG Remote', 'mpg');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(31, 9, 0, 'avi', 'AVI', 'avi');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(32, 10, 0, 'aviremote', 'AVI Remote', 'avi');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(33, 7, 0, 'wmv', 'WMV', 'wmv');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(34, 8, 0, 'wmvremote', 'WMV Remote', 'wmv');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(35, 7, 0, 'wma', 'WMA', 'wma');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(36, 8, 0, 'wmaremote', 'WMA Remote', 'wma');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(37, 9, 0, 'divx', 'DIVX', 'divx');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(38, 10, 0, 'divxremote', 'DIVX Remote', 'divx');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(39, 11, 0, 'swf', 'SWF', 'swf');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(40, 12, 0, 'swfremote', 'SWF Remote', 'swf');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(41, 13, 0, 'youtube', 'Youtube', '');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(42, 14, 0, 'vimeo', 'Vimeo', '');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(43, 15, 0, 'dailymotion', 'DailyMotion', '');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(44, 16, 0, 'blib', 'Blip TV', '');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(45, 17, 0, '123video', '123Video', '');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(56, 9, 0, 'mkv', 'Matroska Media Container', 'mkv');
+INSERT INTO `#__allmediaplay_taglist` (`id`, `player_id`, `plist`, `name`, `description`, `ext`) VALUES(57, 10, 0, 'mkvremote', 'Matroska Media Container Remote', 'mkv');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

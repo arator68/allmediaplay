@@ -7,7 +7,6 @@
  * @version 1.0.0
  * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  * */
-
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
 
@@ -19,14 +18,26 @@ jimport('joomla.application.component.controlleradmin');
  */
 class AllMediaPlayControllerPlayLists extends JControllerAdmin
 {
-	/**
-	 * Proxy for getModel.
-	 * @since	1.6
-	 */
-	public function getModel($name = 'Playlists', $prefix = 'AllMediaPlayModel') 
-	{
-		$model = parent::getModel($name, $prefix, array('ignore_request' => true));
-		return $model;
-	}
-}
 
+    /**
+     * Proxy for getModel.
+     * @since	1.6
+     */
+    public function getModel($name = 'Playlists', $prefix = 'AllMediaPlayModel')
+    {
+        $model = parent::getModel($name, $prefix, array('ignore_request' => true));
+        return $model;
+    }
+
+    public function delete()
+    {
+        $cid = JRequest::getVar('cid', array(), '', 'array');
+        parent::delete();
+    }
+
+    public function edit()
+    {
+        JRequest::setVar('view', 'playlist');
+    }
+
+}

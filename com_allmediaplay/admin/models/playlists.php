@@ -75,7 +75,7 @@ class AllMediaPlayModelPlaylists extends JModel
         return $data;
     }
 
-    function delete() {
+    public function delete() {
         $cids = JRequest::getVar('cid', array(),'post','array');
         foreach ($cids as $cid) {
             if (!unlink($cid))

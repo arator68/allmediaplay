@@ -55,8 +55,8 @@ class AllMediaPlayGenericHelper {
         $vdir = $pparams->get('vfolder', 'videos');
         $pos = JString::strpos($vdir, '/');
         if (JString::strpos($vdir, '/') == 0) {
-            //$vdir = JPATH_ROOT.'/'.$vdir;
-            $vdir = $mdir.DS.$vdir;
+            $vdir = JPATH_ROOT.'/'.$vdir;
+            //$vdir = $mdir.DS.$vdir;
         } else {
             $vdir = $mdir.DS.$vdir;
         }

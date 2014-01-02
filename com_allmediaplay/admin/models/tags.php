@@ -31,7 +31,7 @@ class AllMediaPlayModelTags extends JModelList
         $query = $db->getQuery(true);
 
         // Select some fields
-        $query->select('id,player_id,name,description');
+        $query->select('id,player_id,name,description,ext');
 
         // From the hello table
         $query->from('#__allmediaplay_taglist');

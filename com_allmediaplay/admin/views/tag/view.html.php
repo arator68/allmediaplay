@@ -60,7 +60,7 @@ class AllMediaPlayViewTag extends JView
         $userId = $user->id;
         $isNew = $this->item->id == 0;
         $canDo = AllMediaPlayHelper::getActions($this->item->id);
-        JToolBarHelper::title($isNew ? JText::_('COM_ALLMEDIAPLAY_MANAGER_ALLMEDIAPLAY_EDIT') : JText::_('COM_ALLMEDIAPLAY_MANAGER_ALLMEDIAPLAY_EDIT'), 'allmediaplay');
+        JToolBarHelper::title($isNew ? JText::_('COM_ALLMEDIAPLAY_FORM_TAG_NEW') : JText::_('COM_ALLMEDIAPLAY_FORM_TAG_EDIT'), 'allmediaplay');
         // Built the actions for new and existing records.
         if ($isNew)
         {

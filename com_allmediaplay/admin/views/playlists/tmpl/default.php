@@ -110,6 +110,8 @@ for ($i = 0, $n = count($this->items); $i < $n; $i++) {
     $fn = $row->folder.DS.$row->filename;
     $checked = JHTML::_('grid.id', $i, $fn, false, 'cid');
     $link = '<a rel="'.$fn.'" href="#" onclick="doEdit(this);">';
+    $route=JRoute::_('index.php?option=com_allmediaplay&task=playlist.edit&id=').$fn;
+    $link = '<a rel="'.$fn.'" href="'.$route.'";">';
 ?>
             <tr class="<?php echo "row$k"; ?>">
                 <td align="right"><?php echo $row->id;?></td>

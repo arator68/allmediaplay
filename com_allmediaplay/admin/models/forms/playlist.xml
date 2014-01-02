@@ -9,42 +9,34 @@
 			type="hidden"
 		/>
 		<field
-			name="player_id"
-			type="tag"
-			label="COM_ALLMEDIAPLAY_FORM_TAG_PLAYER_ID"
+			name="version"
+			type="text"
+			label="COM_ALLMEDIAPLAY_FORM_PLAYER_VERSION"
 			description="COM_HELLOWORLD_HELLOWORLD_FIELD_GREETING_DESC"
-			required="true"
+			size="8"
+			class="inputbox"
+			required="false"
 			default=""
 		/>
 		<field
-			name="plist"
-			type="list"
-			default=""
-			label="COM_ALLMEDIAPLAY_FORM_TAG_PLIST"
-			description="COM_HELLOWORLD_HELLOWORLD_FIELD_CATID_DESC"
-			required="true"
-		>
-                        <option value="0">JNO</option>
-                        <option value="1">JYES</option>
-		</field>
-                <field
-			name="name"
+			name="location"
 			type="text"
 			class="inputbox"
                         size="25"
 			default=""
-			label="COM_ALLMEDIAPLAY_FORM_TAG_NAME"
+			label="COM_ALLMEDIAPLAY_FORM_PLAYER_LOCATION"
 			description="COM_HELLOWORLD_HELLOWORLD_FIELD_CATID_DESC"
 			required="true"
 		>
 		</field>
                 <field
-			name="ext"
-			type="text"
+			name="code"
+			type="textarea"
+                        filter="raw"
 			class="inputbox"
-                        size="25"
+                        rows="20"
 			default=""
-			label="COM_ALLMEDIAPLAY_FORM_TAG_EXTENSION"
+			label="COM_ALLMEDIAPLAY_FORM_PLAYER_CODE"
 			description="COM_HELLOWORLD_HELLOWORLD_FIELD_CATID_DESC"
 			required="true"
 		>
@@ -55,7 +47,7 @@
 			class="inputbox"
                         size="40"
 			default=""
-			label="COM_ALLMEDIAPLAY_FORM_TAG_DESCRIPTION"
+			label="COM_ALLMEDIAPLAY_FORM_PLAYER_DESCRIPTION"
 			description="COM_HELLOWORLD_HELLOWORLD_FIELD_CATID_DESC"
 			required="true"
 		>

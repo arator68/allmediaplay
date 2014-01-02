@@ -29,6 +29,11 @@ defined('_JEXEC') or die('Restricted Access');
 		</td>
                 <td>
 			<a href="<?php echo JRoute::_('index.php?option=com_allmediaplay&task=tag.edit&id=' . $item->id); ?>">
+				<?php echo $item->ext; ?>
+			</a>
+		</td>
+                <td>
+			<a href="<?php echo JRoute::_('index.php?option=com_allmediaplay&task=tag.edit&id=' . $item->id); ?>">
 				<?php echo $item->description; ?>
 			</a>
 		</td>

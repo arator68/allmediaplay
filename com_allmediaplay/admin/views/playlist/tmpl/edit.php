@@ -17,7 +17,7 @@ $params = $this->form->getFieldsets('params');
 <form action="<?php echo JRoute::_('index.php?option=com_allmediaplay&layout=edit&id=' . (int) $this->item->id); ?>" method="post" name="adminForm" id="player-form" class="form-validate">
     <div class="width-100 fltlft">
         <fieldset class="adminform">
-            <legend><?php echo JText::_('COM_ALLMEDIAPLAY_FORM_PLAYER_DETAILS'); ?></legend>
+            <legend><?php echo JText::_('COM_ALLMEDIAPLAY_FORM_PLAYLIST_DETAILS'); ?></legend>
             <ul class="adminformlist">
                 <?php foreach ($this->form->getFieldset('details') as $field): ?>
                     <li><?php echo $field->label;

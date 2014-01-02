@@ -22,6 +22,9 @@ defined('_JEXEC') or die('Restricted Access');
         <th width="180">
 		<?php echo JText::_('COM_ALLMEDIAPLAY_ALLMEDIAPLAY_HEADING_NAME'); ?>
 	</th>
+        <th width="180">
+		<?php echo JText::_('COM_ALLMEDIAPLAY_ALLMEDIAPLAY_HEADING_EXTENSION'); ?>
+	</th>
         <th>
 		<?php echo JText::_('COM_ALLMEDIAPLAY_ALLMEDIAPLAY_HEADING_DESCRIPTION'); ?>
 	</th>

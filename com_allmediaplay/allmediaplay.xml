@@ -66,6 +66,7 @@
 			<folder>elements</folder>
                         <!-- helpers files section -->
 			<folder>tables</folder>
+                        <folder>help</folder>
 		</files>
 
 		<languages folder="language">

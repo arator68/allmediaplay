@@ -30,6 +30,7 @@ class AllMediaPlayViewPlaylists extends JView
         $vdir = AllMediaPlayGenericHelper::getVdir();
         $app = JFactory::getApplication();
         $folder = $app->getUserStateFromRequest('com_allmediaplay.playlists_folder', 'folder', $vdir);
+        //$folder=$vdir;
 
         // Get data from the model
         $fselect = $this->_getFolderSelect($vdir, $folder);
@@ -88,15 +89,15 @@ class AllMediaPlayViewPlaylists extends JView
         JToolBarHelper::title(JText::_('COM_ALLMEDIAPLAY_MANAGER_PLAYLIST'), 'allmediaplay');
         if ($canDo->get('core.create'))
         {
-            JToolBarHelper::addNew('tag.add', 'JTOOLBAR_NEW');
+            JToolBarHelper::addNew('playlist.add', 'JTOOLBAR_NEW');
         }
         if ($canDo->get('core.edit'))
         {
-            JToolBarHelper::editList('tag.edit', 'JTOOLBAR_EDIT');
+            JToolBarHelper::editList('playlist.edit', 'JTOOLBAR_EDIT');
         }
         if ($canDo->get('core.delete'))
         {
-            JToolBarHelper::deleteList('', 'tag.delete', 'JTOOLBAR_DELETE');
+            JToolBarHelper::deleteList('', 'playlists.delete', 'JTOOLBAR_DELETE');
         }
         if ($canDo->get('core.admin'))
         {
@@ -104,6 +105,7 @@ class AllMediaPlayViewPlaylists extends JView
             JToolBarHelper::preferences('com_allmediaplay');
         }
         JToolBarHelper::help('playlists', true);
+        JToolBarHelper::addNewX();
     }
 
     /**
@@ -134,7 +136,7 @@ class AllMediaPlayViewPlaylists extends JView
     function &_getViewLists(&$app, $folder)
     {
         $filter_order = $app->getUserStateFromRequest("com_allmediaplay.filter_playlists_order", 'filter_order', 'filename', 'cmd');
-        $filter_order_Dir = $app->getUserStateFromRequest("com_avreloaded.filter_playlists_order_Dir", 'filter_order_Dir', 'asc', 'word');
+        $filter_order_Dir = $app->getUserStateFromRequest("com_allmediaplay.filter_playlists_order_Dir", 'filter_order_Dir', 'asc', 'word');
         $limit = $app->getUserStateFromRequest('global.list.limit', 'limit', $app->getCfg('list_limit'), 'int');
         $limitstart = $app->getUserStateFromRequest('com_allmediaplay.limitstart_playlists', 'limitstart', 0, 'int');
         $m = $this->getModel();
