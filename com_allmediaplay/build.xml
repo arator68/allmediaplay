@@ -35,13 +35,13 @@ C:\\xampp\\htdocs\\joomla_root\\ ; or what ever it is on linux or Mac OS is that
     <property name="adminsrc" location="../com_allmediaplay/admin"/>
     <property name="mediasrc" location="../com_allmediaplay/media"/>
     <property name="sitesrc" location="../com_allmediaplay/site"/>
-    <property name="languagesrc" location="../com_allmediaplay/language/de-DE"/>
+    <property name="languagesrc" location="../com_allmediaplay/language"/>
     <property name="build" location="../package"/>
     
     <property name="sitetest" value="${web.root_prj}components\com_${name}" />
     <property name="admintest" value="${web.root_prj}administrator\components\com_${name}" />
     <property name="mediatest" value="${web.root_prj}media\com_${name}" />
-    <property name="languagetest" value="${web.root_prj}administrator\language\de-DE" />
+    <property name="languagetest" value="${web.root_prj}administrator\language" />
     <property name="manifest" value="${src}\${name}.xml" />
     
     <target name="init">
@@ -117,9 +117,8 @@ C:\\xampp\\htdocs\\joomla_root\\ ; or what ever it is on linux or Mac OS is that
         <echo message="Running build.xml...." />
         <copy todir="${mediatest}">
             <fileset dir="${mediasrc}">
-                <exclude name="**/*.svn/"/>
-                <exclude name="**/nbproject/**"/>
-               
+<!--                <exclude name="**/*.svn/"/>
+                <exclude name="**/nbproject/**"/>               -->
             </fileset>
         </copy>
         
@@ -129,9 +128,8 @@ C:\\xampp\\htdocs\\joomla_root\\ ; or what ever it is on linux or Mac OS is that
         <echo message="Running build.xml...." />
         <copy todir="${languagetest}">
             <fileset dir="${languagesrc}">
-                <exclude name="**/*.svn/"/>
-                <exclude name="**/nbproject/**"/>
-               
+ <!--               <exclude name="**/*.svn/"/>
+                <exclude name="**/nbproject/**"/>-->             
             </fileset>
         </copy>
         
